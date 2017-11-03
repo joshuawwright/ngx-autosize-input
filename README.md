@@ -29,15 +29,20 @@ Use directly in your HTML templates on an input element:
 <input appAutoSizeInput>
 
 By default this is set up to work well with Boostrap's form control class and inserts 4 extra characters of space.
- You can change the spacing from the default using the following attribute: 
+You can change the spacing from the default using the following attribute: 
+ ```
  [extraWidth]
+ ```
 
 For example, if you don't want any extra space:
+ ```
 <input appAutoSizeInput [extraWidth]="0">
-
+```
 Note that extraWidth is the width of a single underscore character calculated from the input font and size. So if you
 want 4 characters worth of space:
+```
 <input appAutoSizeInput [extraWidth]="4">
+```
 
 ## Author
 Joshua Wright
