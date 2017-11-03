@@ -26,7 +26,9 @@ import {autoSizeInputModule} from 'ngx-autosize-input';
 
 ## Use Example
 Use directly in your HTML templates on an input element:
+ ```
 <input appAutoSizeInput>
+```
 
 By default this is set up to work well with Boostrap's form control class and inserts 4 extra characters of space.
 You can change the spacing from the default using the following attribute: 
