@@ -1,26 +1,31 @@
 # ngx-autosize-input
-is an Angular directive that automatically adjusts the width of an input element to its content. Unlike other auto-grow directives, it is unique because it both shrinks and increases the width.
+is an Angular directive that automatically adjusts the width of an input element to its content. Unlike other auto-grow directives, it is unique because it both shrinks and increases the width based on the content.
 
 ## Demo
 (To Be Added)
 
 ## Installation
+
+```bash
 npm install ngx-autosize-input
+```
 
 Add import and declaration to your @NgModule:
 
-// Import
+```typescript
 import {InputAutoSizeDirective} from 'ngx-autosize-input';
 
-// Declaration
+...
+
 @NgModule({
   declarations: [
     appAutoSizeInput
   ]
 })
+```
 
 ## Use Example
-Use directly in your HTML files on an input element:
+Use directly in your HTML templates on an input element:
 <input appAutoSizeInput>
 
 ## Author
