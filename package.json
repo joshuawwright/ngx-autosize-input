@@ -1,0 +1,57 @@
+{
+  "name": "ngx-autosize-input",
+  "version": "1.0.0",
+  "description": "Angular directive that automatically adjusts the width of an input element to its content. Unlike other auto-grow directives, it is unique because it both shrinks and increase the width based on the content.",
+  "scripts": {
+    "clean": "rimraf .tmp && rimraf dist",
+    "transpile": "ngc",
+    "package": "rollup -c",
+    "minify": "uglifyjs dist/bundles/ngx-autosize-input.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ngx-autosize-input.umd.min.js",
+    "copy": "cpx './package-dist.json' dist && renamer --find 'package-dist.json' --replace 'package.json' ./dist/*",
+    "build": "npm run clean && npm run transpile && npm run package && npm run minify && npm run copy"
+  },
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DesertFoxNV/ngx-autosize-input.git"
+  },
+  "keywords": [
+    "ngx",
+    "angular",
+    "angular2",
+    "angular4",
+    "ngx-autosize-input",
+    "input",
+    "resize",
+    "auto-grow",
+    "autoSize",
+    "autoGrow",
+    "auto-size",
+    "angular2-autosize",
+    "ng-autosize",
+    "ng2-autosize",
+    "ngx-autosize",
+    "auto-width",
+    "autoWidth"
+  ],
+  "author": "Joshua Wright",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DesertFoxNV/ngx-autosize-input/issues"
+  },
+  "homepage": "https://github.com/DesertFoxNV/ngx-autosize-input#readme",
+  "dependencies": {
+    "@angular/core": "^2.4.4",
+    "zone.js": "^0.7.6"
+  },
+  "devDependencies": {
+    "@angular/compiler": "^2.4.4",
+    "@angular/compiler-cli": "^2.4.4",
+    "cpx": "^1.5.0",
+    "renamer": "^0.6.1",
+    "rimraf": "^2.5.4",
+    "rollup": "^0.41.4",
+    "typescript": "~2.0.0",
+    "uglify-js": "^2.7.5"
+  }
+}

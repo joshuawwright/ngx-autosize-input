@@ -1,0 +1,45 @@
+{
+  "name": "ngx-autosize-input",
+  "version": "1.0.0",
+  "description": "Angular directive that automatically adjusts the width of an input element to its content. Unlike other auto-grow directives, it is unique because it both shrinks and increase the width based on the content.",
+  "scripts": {},
+  "main": "bundles/npm-ngx-autosize-input.umd.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DesertFoxNV/ngx-autosize-input.git"
+  },
+  "keywords": [
+    "ngx",
+    "angular",
+    "angular2",
+    "angular4",
+    "ngx-autosize-input",
+    "input",
+    "resize",
+    "auto-grow",
+    "autoSize",
+    "autoGrow",
+    "auto-size",
+    "angular2-autosize",
+    "ng-autosize",
+    "ng2-autosize",
+    "ngx-autosize",
+    "auto-width",
+    "autoWidth"
+  ],
+  "author": "Joshua Wright",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DesertFoxNV/ngx-autosize-input/issues"
+  },
+  "homepage": "https://github.com/DesertFoxNV/ngx-autosize-input#readme",
+  "dependencies": {
+
+  },
+  "peerDependencies": {
+    "@angular/core": "^2.4.0",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "^5.0.1",
+    "zone.js": "^0.7.2"
+  }
+}
