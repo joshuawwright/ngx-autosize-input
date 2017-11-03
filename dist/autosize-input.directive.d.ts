@@ -4,6 +4,7 @@
 import { ElementRef, AfterContentChecked } from '@angular/core';
 export declare class AutoSizeInputDirective implements AfterContentChecked {
     element: ElementRef;
+    extraWidth: number;
     onInput(): void;
     constructor(element: ElementRef);
     ngAfterContentChecked(): void;

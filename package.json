@@ -42,6 +42,7 @@
   "homepage": "https://github.com/DesertFoxNV/ngx-autosize-input#readme",
   "dependencies": {
     "@angular/core": "^2.4.4",
+    "rxjs": "^5.0.3",
     "zone.js": "^0.7.6"
   },
   "devDependencies": {

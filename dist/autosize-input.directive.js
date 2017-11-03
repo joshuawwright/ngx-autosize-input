@@ -1,7 +1,8 @@
-import { ElementRef, HostListener, Directive } from '@angular/core';
+import { ElementRef, HostListener, Directive, Input } from '@angular/core';
 export var AutoSizeInputDirective = (function () {
     function AutoSizeInputDirective(element) {
         this.element = element;
+        this.extraWidth = 4;
     }
     AutoSizeInputDirective.prototype.onInput = function () {
         this.adjustWidth();
@@ -13,8 +14,9 @@ export var AutoSizeInputDirective = (function () {
         var style = window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-size');
         var fontFamily = window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-family');
         var fontSize = parseFloat(style);
+        var extraWidthCalculated = this.getTextWidth('_', fontSize, fontFamily) * this.extraWidth;
         this.element.nativeElement.style.width = this.getTextWidth(this.element.nativeElement.value, fontSize, fontFamily)
-            + this.getTextWidth('____', fontSize, fontFamily) + 'px';
+            + extraWidthCalculated + 'px';
     };
     AutoSizeInputDirective.prototype.getTextWidth = function (value, fontSize, fontFamily) {
         var canvas = document.createElement('canvas');
@@ -32,6 +34,7 @@ export var AutoSizeInputDirective = (function () {
         { type: ElementRef, },
     ]; };
     AutoSizeInputDirective.propDecorators = {
+        'extraWidth': [{ type: Input },],
         'onInput': [{ type: HostListener, args: ['input', ['$event.target'],] },],
     };
     return AutoSizeInputDirective;

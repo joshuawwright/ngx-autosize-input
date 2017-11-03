@@ -1,12 +1,14 @@
 /**
  * Created by Joshua Wright on 11/2/2017
  */
-import { ElementRef, HostListener, Directive, AfterContentChecked } from '@angular/core';
+import { ElementRef, HostListener, Directive, AfterContentChecked, Input } from '@angular/core';
 
 @Directive({
     selector: '[appAutoSizeInput]',
 })
 export class AutoSizeInputDirective implements AfterContentChecked {
+
+    @Input() extraWidth = 4;
 
     @HostListener('input', ['$event.target'])
     onInput(): void {
@@ -24,8 +26,9 @@ export class AutoSizeInputDirective implements AfterContentChecked {
         const style = window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-size');
         const fontFamily = window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-family');
         const fontSize = parseFloat(style);
+        const extraWidthCalculated = this.getTextWidth('_', fontSize, fontFamily) * this.extraWidth;
         this.element.nativeElement.style.width = this.getTextWidth(this.element.nativeElement.value, fontSize, fontFamily)
-            + this.getTextWidth('____', fontSize, fontFamily) + 'px';
+            + extraWidthCalculated + 'px';
     }
 
     getTextWidth(value: string, fontSize: any, fontFamily: string) {
