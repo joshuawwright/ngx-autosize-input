@@ -1,7 +1,7 @@
 # ngx-autosize-input
 An Angular directive that automatically adjusts the width of an input element to its content. Unlike other auto-grow directives, it is unique because it both shrinks and increases the width based on the content.
 
-## Plunker Demo
+## Stack Blitz Demo
 https://stackblitz.com/edit/ngx-autosize-input
 
 ## Installation
@@ -100,6 +100,14 @@ Example (100px maximum width):
  ```
 <input AutoSizeInput [maxWidth]="100">
 ```
+
+## Styles That Affect Widths
+Currently, the following styles are used to determine the width of the input element:
+*Font Family
+*Font Size
+*Font Weight
+
+Inline styles are given priority over stylesheet styles. Additional styles could be easily added by request.
 
 ## Author
 Joshua Wright
