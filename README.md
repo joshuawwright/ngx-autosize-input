@@ -32,9 +32,9 @@ Use directly in your HTML templates on an input element:
 
 ## Styles That Affect Widths
 Currently, the following styles are used to determine the width of the input element:
-*Font Family
-*Font Size
-*Font Weight
+* Font Family
+* Font Size
+* Font Weight
 
 Inline styles currently overload computed styles. Additional styles could be easily added by request.
 
