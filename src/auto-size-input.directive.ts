@@ -16,7 +16,7 @@ export class AutoSizeInputDirective implements AfterContentChecked {
     paddingWidth: number;
 
     @HostListener('input', ['$event.target'])
-    public onInput(event: any): void {
+    public onInput(): void {
         this.adjustWidth();
     }
 
@@ -49,6 +49,7 @@ export class AutoSizeInputDirective implements AfterContentChecked {
 
         const inputText = this.element.nativeElement.value;
         let placeHolderText = '';
+
         try {
             placeHolderText =  this.element.nativeElement.placeholder;
         } catch (error) {
@@ -80,19 +81,22 @@ export class AutoSizeInputDirective implements AfterContentChecked {
     }
 
     calculateTextWidth(value: string) {
-        const style = this.getStyle();
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        ctx!.font = `${style.fontSize}px ${style.fontFamily}`;
+        const style = this.getStyle(),
+            canvas = document.createElement('canvas'),
+            ctx = canvas.getContext('2d');
+        ctx.font = `bold ${style.fontSize} ${style.fontFamily}`;
         return ctx!.measureText(value).width;
     }
 
     getStyle() {
-        const style = window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-size');
-        const fontFamily = window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-family');
-        const fontSize = parseFloat(style);
+        const fontSize = this.element.nativeElement.style.fontSize ? this.element.nativeElement.style.fontSize :
+               window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-size'),
+            fontFamily = this.element.nativeElement.style.fontFamily ? this.element.nativeElement.style.fontFamily :
+                window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-family'),
+            fontWeight = this.element.nativeElement.style.fontWeight ? this.element.nativeElement.style.fontWeight :
+                window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-weight');
 
-        return {fontFamily: fontFamily, fontSize: fontSize};
+        return {fontFamily: fontFamily, fontSize: fontSize, fontWeight: fontWeight};
     }
 
     setWidth(width: any) {
