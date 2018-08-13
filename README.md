@@ -30,6 +30,14 @@ Use directly in your HTML templates on an input element:
 <input AutoSizeInput>
 ```
 
+## Styles That Affect Widths
+Currently, the following styles are used to determine the width of the input element:
+*Font Family
+*Font Size
+*Font Weight
+
+Inline styles currently overload computed styles. Additional styles could be easily added by request.
+
 ## Parameters
 The following parameters customize the directive.
 
@@ -100,14 +108,6 @@ Example (100px maximum width):
  ```
 <input AutoSizeInput [maxWidth]="100">
 ```
-
-## Styles That Affect Widths
-Currently, the following styles are used to determine the width of the input element:
-*Font Family
-*Font Size
-*Font Weight
-
-Inline styles are given priority over stylesheet styles. Additional styles could be easily added by request.
 
 ## Author
 Joshua Wright
