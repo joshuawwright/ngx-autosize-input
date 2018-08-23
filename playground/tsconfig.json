@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "outDir": "../.playground",
-    "target": "es5",
+    "rootDir": "../src/",
+    "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
