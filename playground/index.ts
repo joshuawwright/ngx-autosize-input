@@ -10,7 +10,7 @@ import { AutoSizeInputModule } from '../src/index';
 
 @Component({
   selector: 'app',
-  template: `Test <input type="text" AutoSizeInput>`
+  template: `<input type="text" AutoSizeInput style="font-weight: bold">`
 })
 class AppComponent {}
 

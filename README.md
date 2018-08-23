@@ -69,11 +69,11 @@ Example (turn off placeholder):
 Includes border width, so that text is not cut off.
 Note only even left and right borders are supported at this time.
 
-Default Value: true
+Default Value: false
 
-Example (turn off include borders): 
+Example (turn on include borders):
  ```
-<input AutoSizeInput [includeBorders]="false">
+<input AutoSizeInput [includeBorders]="true">
 ```
 
 ### \[includePadding]

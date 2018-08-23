@@ -4,6 +4,7 @@
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
+    "copy-files:watch": "cpx .playground/playground/*.{js,js.map} .playground --watch",
     "docs": "npm run docs:build",
     "docs:build": "compodoc -p tsconfig.json -n ngx-autosize-input -d docs --hideGenerator",
     "docs:serve": "npm run docs:build -- -s",
@@ -43,6 +44,7 @@
     "codelyzer": "~3.2.0",
     "concurrently": "^3.4.0",
     "core-js": "^2.4.1",
+    "cpx": "^1.5.0",
     "fs-extra": "^5.0.0",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",

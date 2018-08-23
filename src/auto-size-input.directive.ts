@@ -7,7 +7,7 @@ export class AutoSizeInputDirective implements AfterContentChecked {
 
     @Input() extraWidth = 0;
     @Input() includePlaceholder = true;
-    @Input() includeBorders = true;
+    @Input() includeBorders = false;
     @Input() includePadding = true;
     @Input() minWidth = -1;
     @Input() maxWidth = -1;
@@ -84,19 +84,23 @@ export class AutoSizeInputDirective implements AfterContentChecked {
         const style = this.getStyle(),
             canvas = document.createElement('canvas'),
             ctx = canvas.getContext('2d');
-        ctx.font = `bold ${style.fontSize} ${style.fontFamily}`;
+        ctx.font = `${style.fontStyle} ${style.fontVariant} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
         return ctx!.measureText(value).width;
     }
 
     getStyle() {
-        const fontSize = this.element.nativeElement.style.fontSize ? this.element.nativeElement.style.fontSize :
-               window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-size'),
-            fontFamily = this.element.nativeElement.style.fontFamily ? this.element.nativeElement.style.fontFamily :
+        const fontFamily = this.element.nativeElement.style.fontFamily ? this.element.nativeElement.style.fontFamily :
                 window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-family'),
+            fontStyle = this.element.nativeElement.style.fontStyle ? this.element.nativeElement.style.fontStyle :
+                window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-style'),
+            fontSize = this.element.nativeElement.style.fontSize ? this.element.nativeElement.style.fontSize :
+                window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-size'),
+            fontVariant = this.element.nativeElement.style.fontSize ? this.element.nativeElement.style.fontSize :
+                window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-variant'),
             fontWeight = this.element.nativeElement.style.fontWeight ? this.element.nativeElement.style.fontWeight :
                 window.getComputedStyle(this.element.nativeElement, '').getPropertyValue('font-weight');
 
-        return {fontFamily: fontFamily, fontSize: fontSize, fontWeight: fontWeight};
+        return {fontFamily: fontFamily, fontSize: fontSize, fontWeight: fontWeight, fontStyle: fontStyle, fontVariant: fontVariant};
     }
 
     setWidth(width: any) {
@@ -106,9 +110,8 @@ export class AutoSizeInputDirective implements AfterContentChecked {
     setWidthByValue(value: any) {
         this.element.nativeElement.style.width =
             this.calculateTextWidth(value) +
-            this.extraWidth +
-            this.borderWidth +
-            this.paddingWidth +
-            'px';
+                this.extraWidth +
+                this.borderWidth +
+                this.paddingWidth + 'px';
     }
 }
