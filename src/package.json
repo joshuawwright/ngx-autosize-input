@@ -1,6 +1,6 @@
 {
   "name": "ngx-autosize-input",
-  "version": "0.1.0",
+  "version": "2.2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/DesertFoxNV/ngx-autosize-input"
@@ -21,8 +21,8 @@
   "jsnext:main": "ngx-autosize-input.js",
   "typings": "ngx-autosize-input.d.ts",
   "peerDependencies": {
-    "@angular/core": "^4.0.0",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "@angular/core": ">=4.0.0",
+    "rxjs": ">=5.1.0",
+    "zone.js": ">=0.8.4"
   }
 }
