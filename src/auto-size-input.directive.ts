@@ -1,9 +1,9 @@
-import { ElementRef, HostListener, Directive, AfterContentChecked, Input } from '@angular/core';
+import { ElementRef, HostListener, Directive, AfterContentChecked, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Directive({
     selector: '[AutoSizeInput]',
 })
-export class AutoSizeInputDirective implements AfterContentChecked {
+export class AutoSizeInputDirective implements AfterContentChecked, OnChanges {
 
     @Input() extraWidth = 0;
     @Input() includePlaceholder = true;
@@ -24,6 +24,11 @@ export class AutoSizeInputDirective implements AfterContentChecked {
     }
 
     ngAfterContentChecked(): void {
+        this.adjustWidth();
+    }
+
+    ngOnChanges(changes: SimpleChanges): void
+    {
         this.adjustWidth();
     }
 
