@@ -1,4 +1,4 @@
-import { ElementRef, HostListener, Directive, AfterContentChecked, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {ElementRef, HostListener, Directive, AfterContentChecked, Input, OnChanges, SimpleChanges, Renderer2} from '@angular/core';
 
 @Directive({
     selector: '[AutoSizeInput]',
@@ -20,7 +20,7 @@ export class AutoSizeInputDirective implements AfterContentChecked, OnChanges {
         this.adjustWidth();
     }
 
-    constructor(public element: ElementRef) {
+    constructor(public element: ElementRef, public renderer: Renderer2) {
     }
 
     ngAfterContentChecked(): void {
@@ -109,14 +109,10 @@ export class AutoSizeInputDirective implements AfterContentChecked, OnChanges {
     }
 
     setWidth(width: any) {
-        this.element.nativeElement.style.width = width + 'px';
+        this.renderer.setStyle(this.element.nativeElement, 'width', width + 'px');
     }
 
     setWidthByValue(value: any) {
-        this.element.nativeElement.style.width =
-            this.calculateTextWidth(value) +
-                this.extraWidth +
-                this.borderWidth +
-                this.paddingWidth + 'px';
+        this.setWidth(this.calculateTextWidth(value) + this.extraWidth + this.borderWidth + this.paddingWidth);
     }
 }
