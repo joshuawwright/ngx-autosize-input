@@ -109,7 +109,10 @@ export class AutoSizeInputDirective implements AfterContentChecked, OnChanges {
     }
 
     setWidth(width: any) {
-        this.renderer.setStyle(this.element.nativeElement, 'width', width + 'px');
+        const element = this.element.nativeElement;
+        const parent = this.renderer.parentNode(element);
+        parent.classList.contains('mat-form-field-infix') ? this.renderer.setStyle(parent, 'width', width + 'px')
+            : this.renderer.setStyle(element, 'width', width + 'px');
     }
 
     setWidthByValue(value: any) {
