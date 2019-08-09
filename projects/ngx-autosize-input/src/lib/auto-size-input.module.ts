@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { AutoSizeInputDirective } from './auto-size-input.directive';
 
@@ -8,10 +8,10 @@ import { AutoSizeInputDirective } from './auto-size-input.directive';
 		CommonModule
 	],
 	declarations: [
-		AutoSizeInputDirective,
+		AutoSizeInputDirective
 	],
 	exports: [
-		AutoSizeInputDirective,
+		AutoSizeInputDirective
 	]
 })
 export class AutoSizeInputModule {}

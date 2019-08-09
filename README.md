@@ -109,6 +109,19 @@ Example (100px maximum width):
 <input AutoSizeInput [maxWidth]="100">
 ```
 
+### \[setParentWidth]
+
+Sets parent width automatically, instead of input width. Useful when you need to update a parent's width.
+
+Default Value: false
+
+Example (input wrapped in an Angular Material form field component): 
+ ```
+<mat-form-field> // This will be resized
+    <input AutoSizeInput [setParentWidth]="true">
+</mat-form-field>
+```
+
 ## Author
 Joshua Wright
 

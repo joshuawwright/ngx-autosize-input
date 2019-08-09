@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
 	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss']
+	template: `<input AutoSizeInput type="text">`
 })
 export class AppComponent
 {
-	title = 'ngx-autosize-input-tester';
 }
