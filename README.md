@@ -30,13 +30,11 @@ Use directly in your HTML templates on an input element:
 <input AutoSizeInput>
 ```
 
-## Styles That Affect Widths
-Currently, the following styles are used to determine the width of the input element:
-* Font Family
-* Font Size
-* Font Weight
-
-Inline styles currently overload computed styles. Additional styles could be easily added by request.
+## Using Bootstrap
+If using Bootstrap, set the directive to include borders so that the text is not cut off.
+ ```
+<input AutoSizeInput [includeBorders]=true>
+```
 
 ## Parameters
 The following parameters customize the directive.
