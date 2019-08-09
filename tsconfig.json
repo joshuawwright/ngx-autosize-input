@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-autosize-input": [
+        "dist/ngx-autosize-input"
+      ],
+      "ngx-autosize-input/*": [
+        "dist/ngx-autosize-input/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

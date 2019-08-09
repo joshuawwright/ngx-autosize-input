@@ -1,0 +1,30 @@
+{
+	"name": "ngx-autosize-input",
+	"version": "2.3.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/DesertFoxNV/ngx-autosize-input"
+	},
+	"author": {
+		"name": "Joshua William Wright",
+		"email": "jwwrightcalpoly@gmail.com"
+	},
+	"keywords": [
+		"angular",
+		"input",
+		"resize",
+		"autosize"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/DesertFoxNV/ngx-autosize-input/issues"
+	},
+	"peerDependencies": {
+		"@angular/common": "^8.2.0",
+		"@angular/core": "^8.2.0"
+	},
+	"devDependencies": {
+		"codelyzer": "^5.1.0"
+	},
+	"dependencies": {}
+}
