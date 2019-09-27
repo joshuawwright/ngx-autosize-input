@@ -63,7 +63,16 @@ export class AutoSizeInputDirective implements AfterContentChecked
 	{
 		const ctx = this.renderer.createElement('canvas').getContext('2d');
 
-		ctx.font = window.getComputedStyle(this.element.nativeElement, '').font;
+		const style = window.getComputedStyle(this.element.nativeElement, '');
+
+		const fontStyle = style.getPropertyValue('font-style');
+		const fontVariant = style.getPropertyValue('font-variant');
+		const fontWeight = style.getPropertyValue('font-weight');
+		const fontSize = style.getPropertyValue('font-size');
+		const fontFamily = style.getPropertyValue('font-family');
+
+		// font string format: {normal, normal, 700, 20px, Roboto, "Helvetica Neue", sans-serif}
+		ctx.font = fontStyle + ' ' + fontVariant + ' ' + fontWeight + ' ' + fontSize + ' ' + fontFamily;
 
 		return ctx!.measureText(value).width;
 	}
