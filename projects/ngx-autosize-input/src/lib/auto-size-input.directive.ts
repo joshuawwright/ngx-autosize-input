@@ -14,6 +14,10 @@ export class AutoSizeInputDirective implements AfterContentChecked
 
 	@Input() includePlaceholder = true;
 
+	isEdge = false;
+
+	isIE = false;
+
 	@Input() maxWidth = -1;
 
 	@Input() minWidth = -1;
@@ -33,6 +37,11 @@ export class AutoSizeInputDirective implements AfterContentChecked
 
 	constructor(private element:ElementRef, private renderer:Renderer2)
 	{
+		// Internet Explorer 6-11
+		this.isIE = !!document['DOCUMENT'];
+
+		// Edge 20+
+		this.isEdge = !this.isIE && !!window['StyleMedia'];
 	}
 
 	ngAfterContentChecked():void
@@ -48,6 +57,8 @@ export class AutoSizeInputDirective implements AfterContentChecked
 
 	setWidth(width:number):void
 	{
+		if (this.isEdge) width = width + 2;
+
 		const element = this.element.nativeElement;
 		const parent = this.renderer.parentNode(element);
 		this.setParentWidth ? this.renderer.setStyle(parent, 'width', width + 'px')
