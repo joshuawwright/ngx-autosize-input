@@ -50,7 +50,7 @@ export class AutoSizeInputDirective implements AfterContentChecked
 	}
 
 	@HostListener('input', ['$event.target'])
-	public onInput():void
+	public onInput(event: Event):void
 	{
 		this.updateWidth();
 	}
