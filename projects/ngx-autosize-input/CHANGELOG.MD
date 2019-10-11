@@ -1,3 +1,9 @@
+##2.3.6
+Fixed AOT support, onInput was missing event parameter.
+
+##2.3.5
+Added support for IE and Edge
+
 ##2.3.4
 Added changelog
 
