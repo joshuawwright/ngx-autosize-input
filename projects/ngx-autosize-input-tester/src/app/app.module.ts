@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { AutoSizeInputModule } from 'ngx-autosize-input';
+import { AutoSizeInputModule } from '../../../ngx-autosize-input/src/lib/auto-size-input.module';
 
 import { AppComponent } from './app.component';
 
@@ -10,7 +11,8 @@ import { AppComponent } from './app.component';
 	],
 	imports: [
 		BrowserModule,
-		AutoSizeInputModule
+		AutoSizeInputModule,
+		FormsModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]

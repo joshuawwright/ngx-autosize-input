@@ -1,62 +1,53 @@
-import { AfterContentChecked, Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import {
+	AfterContentChecked, Directive, ElementRef, HostListener, Inject, Input, Optional, Renderer2,
+} from '@angular/core';
+import { NgModel } from '@angular/forms';
 import { WidthProperty } from './width-properties.type';
 
 @Directive({
-	selector: '[AutoSizeInput]'
+	selector: '[autoSizeInput]',
 })
-export class AutoSizeInputDirective implements AfterContentChecked
-{
+export class AutoSizeInputDirective implements AfterContentChecked {
 	@Input() extraWidth = 0;
-
 	@Input() includeBorders = false;
-
 	@Input() includePadding = true;
-
 	@Input() includePlaceholder = true;
-
 	isEdge = false;
-
 	isIE = false;
-
 	@Input() maxWidth = -1;
-
 	@Input() minWidth = -1;
-
 	@Input() setParentWidth = false;
 
-	get borderWidth():number
-	{
+	constructor(
+		@Inject(DOCUMENT) private document: Document,
+		private element: ElementRef,
+		@Optional() private ngModel: NgModel,
+		private renderer: Renderer2,
+	) {
+		this.isIE = !!document['DOCUMENT']; // Internet Explorer 6-11
+		this.isEdge = !this.isIE && !!window['StyleMedia']; 	// Edge 20+
+	}
+
+	get borderWidth(): number {
 		return this.includeBorders ? 2 * this._getPropertyWidth('border') : 0;
 	}
 
-	get paddingWidth():number
-	{
+	get paddingWidth(): number {
 		return this.includePadding ?
 			this._getPropertyWidth('padding-left') + this._getPropertyWidth('padding-right') : 0;
 	}
 
-	constructor(private element:ElementRef, private renderer:Renderer2)
-	{
-		// Internet Explorer 6-11
-		this.isIE = !!document['DOCUMENT'];
-
-		// Edge 20+
-		this.isEdge = !this.isIE && !!window['StyleMedia'];
-	}
-
-	ngAfterContentChecked():void
-	{
+	ngAfterContentChecked(): void {
 		this.updateWidth();
 	}
 
 	@HostListener('input', ['$event.target'])
-	public onInput(event: Event):void
-	{
+	public onInput(): void {
 		this.updateWidth();
 	}
 
-	setWidth(width:number):void
-	{
+	setWidth(width: number): void {
 		if (this.isEdge) width = width + 2;
 
 		const element = this.element.nativeElement;
@@ -65,17 +56,13 @@ export class AutoSizeInputDirective implements AfterContentChecked
 			: this.renderer.setStyle(element, 'width', width + 'px');
 	}
 
-	setWidthUsingText(text:string):void
-	{
+	setWidthUsingText(text: string): void {
 		this.setWidth(this.textWidth(text) + this.extraWidth + this.borderWidth + this.paddingWidth);
 	}
 
-	textWidth(value:string):number
-	{
+	textWidth(value: string): number {
 		const ctx = this.renderer.createElement('canvas').getContext('2d');
-
 		const style = window.getComputedStyle(this.element.nativeElement, '');
-
 		const fontStyle = style.getPropertyValue('font-style');
 		const fontVariant = style.getPropertyValue('font-variant');
 		const fontWeight = style.getPropertyValue('font-weight');
@@ -88,9 +75,8 @@ export class AutoSizeInputDirective implements AfterContentChecked
 		return ctx!.measureText(value).width;
 	}
 
-	updateWidth():void
-	{
-		const inputText = this._getProperty('value');
+	updateWidth(): void {
+		const inputText = this.ngModel ? this.ngModel.value : this._getProperty('value');
 		const placeHolderText = this._getProperty('placeholder');
 		const inputTextWidth =
 			this.textWidth(inputText) + this.extraWidth + this.borderWidth + this.paddingWidth;
@@ -99,38 +85,27 @@ export class AutoSizeInputDirective implements AfterContentChecked
 			(this.textWidth(placeHolderText) > this.textWidth(inputText));
 		const setMaxWidth = this.maxWidth > 0 && (this.maxWidth < inputTextWidth);
 
-		if (setMinWidth)
-		{
+		if (setMinWidth) {
 			this.setWidth(this.minWidth);
-		}
-		else if (setPlaceHolderWidth)
-		{
+		} else if (setPlaceHolderWidth) {
 			this.setWidthUsingText(placeHolderText);
-		}
-		else if (setMaxWidth)
-		{
+		} else if (setMaxWidth) {
 			this.setWidth(this.maxWidth);
-		}
-		else
-		{
+		} else {
 			this.setWidthUsingText(inputText);
 		}
 	}
 
-	private _getProperty(property:'value'|'placeholder')
-	{
-		try
-		{
+	private _getProperty(property: 'value'|'placeholder') {
+		try {
 			return this.element.nativeElement[property];
 		}
-		catch (error)
-		{
+		catch (error) {
 			return '';
 		}
 	}
 
-	private _getPropertyWidth(property:WidthProperty):number
-	{
+	private _getPropertyWidth(property: WidthProperty): number {
 		const width = window.getComputedStyle(this.element.nativeElement, '').getPropertyValue(property);
 		return parseInt(width, 10);
 	}

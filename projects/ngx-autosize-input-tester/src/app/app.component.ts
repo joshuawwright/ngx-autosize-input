@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
 	selector: 'app-root',
-	template: `<input AutoSizeInput type="text">`
+	template: `<input
+    autoSizeInput
+    [style.padding.px]="0"
+    type="text"
+  >`,
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent
-{
+export class AppComponent {
 }

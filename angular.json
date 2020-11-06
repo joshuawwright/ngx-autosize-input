@@ -14,6 +14,11 @@
           "options": {
             "tsConfig": "projects/ngx-autosize-input/tsconfig.lib.json",
             "project": "projects/ngx-autosize-input/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-autosize-input/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -57,7 +62,7 @@
             "main": "projects/ngx-autosize-input-tester/src/main.ts",
             "polyfills": "projects/ngx-autosize-input-tester/src/polyfills.ts",
             "tsConfig": "projects/ngx-autosize-input-tester/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/ngx-autosize-input-tester/src/favicon.ico",
               "projects/ngx-autosize-input-tester/src/assets"
@@ -77,10 +82,8 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -159,6 +162,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngx-autosize-input"
+    }
+  },
+  "defaultProject": "ngx-autosize-input",
+  "cli": {
+    "analytics": "3a630cd3-adf9-43dd-a339-ec080b0f7249"
+  }
 }
