@@ -1,3 +1,9 @@
+##10.0.0
+From now on the major version will be the same as the angular version.
+Renamed directive from AutoSizeInput to autoSizeInput, to match Angular Style Guide.
+Remove Internet Explorer detection, as the user agent styling can be adjusted using CSS.
+Added support for NgModel, so that ChangeDetectionStrategy.OnPush can be used.
+
 ##2.3.6
 Fixed AOT support, onInput was missing event parameter.
 
