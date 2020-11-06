@@ -1,3 +1,6 @@
+##10.0.1
+Updated StackBlitz link in readMe.
+
 ##10.0.0
 From now on the major version will be the same as the angular version.
 Renamed directive from AutoSizeInput to autoSizeInput, to match Angular Style Guide.
