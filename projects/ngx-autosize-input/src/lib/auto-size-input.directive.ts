@@ -1,7 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import {
-	AfterContentChecked, Directive, ElementRef, HostListener, Inject, Input, Optional, Renderer2,
-} from '@angular/core';
+import { AfterContentChecked, Directive, ElementRef, HostListener, Input, Optional, Renderer2 } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { WidthProperty } from './width-properties.type';
 
@@ -18,8 +15,6 @@ export class AutoSizeInputDirective implements AfterContentChecked {
 	@Input() setParentWidth = false;
 
 	constructor(
-		@Inject(DOCUMENT) private document: Document,
-		private window: Window,
 		private element: ElementRef,
 		@Optional() private ngModel: NgModel,
 		private renderer: Renderer2,

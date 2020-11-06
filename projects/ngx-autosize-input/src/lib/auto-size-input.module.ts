@@ -13,8 +13,5 @@ import { AutoSizeInputDirective } from './auto-size-input.directive';
 	exports: [
 		AutoSizeInputDirective,
 	],
-	providers: [
-		{ provide: Window, useValue: window },
-	],
 })
 export class AutoSizeInputModule {}

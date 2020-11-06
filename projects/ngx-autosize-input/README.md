@@ -1,6 +1,9 @@
 # ngx-autosize-input
 An Angular directive that automatically adjusts the width of an input element to its content. Unlike other auto-grow directives, it is unique because it both shrinks and increases the width based on the content.
 
+## Versions
+Moving forward this libraries major version will match it's compatible version. For example version 10, will work for Angular 10.
+
 ## Stack Blitz Demo
 https://stackblitz.com/edit/ngx-autosize-input
 
@@ -27,13 +30,13 @@ import {AutoSizeInputModule} from 'ngx-autosize-input';
 ## Use Example
 Use directly in your HTML templates on an input element:
  ```
-<input AutoSizeInput>
+<input autoSizeInput>
 ```
 
 ## Using Bootstrap
 If using Bootstrap, set the directive to include borders so that the text is not cut off.
  ```
-<input AutoSizeInput [includeBorders]=true>
+<input autoSizeInput [includeBorders]=true>
 ```
 
 ## Parameters
@@ -47,7 +50,7 @@ Default Value: 0px
 
 Example (add 10px): 
  ```
-<input AutoSizeInput [extraWidth]="10">
+<input autoSizeInput [extraWidth]="10">
 ```
 
 ### \[includePlaceholder]
@@ -59,7 +62,7 @@ Default Value: true
 
 Example (turn off placeholder): 
  ```
-<input AutoSizeInput [includePlaceholder]="false">
+<input autoSizeInput [includePlaceholder]="false">
 ```
 
 ### \[includeBorders]
@@ -71,7 +74,7 @@ Default Value: false
 
 Example (turn on include borders):
  ```
-<input AutoSizeInput [includeBorders]="true">
+<input autoSizeInput [includeBorders]="true">
 ```
 
 ### \[includePadding]
@@ -82,7 +85,7 @@ Default Value: true
 
 Example (turn off include padding): 
  ```
-<input AutoSizeInput [includePadding]="false">
+<input autoSizeInput [includePadding]="false">
 ```
 
 ### \[minWidth]
@@ -93,7 +96,7 @@ Default Value: 0
 
 Example (50px minimum width): 
  ```
-<input AutoSizeInput [minWidth]="50">
+<input autoSizeInput [minWidth]="50">
 ```
 
 ### \[maxWidth]
@@ -104,7 +107,7 @@ Default Value: 0
 
 Example (100px maximum width): 
  ```
-<input AutoSizeInput [maxWidth]="100">
+<input autoSizeInput [maxWidth]="100">
 ```
 
 ### \[setParentWidth]
@@ -116,7 +119,7 @@ Default Value: false
 Example (input wrapped in an Angular Material form field component): 
  ```
 <mat-form-field> // This will be resized
-    <input AutoSizeInput [setParentWidth]="true">
+    <input autoSizeInput [setParentWidth]="true">
 </mat-form-field>
 ```
 
