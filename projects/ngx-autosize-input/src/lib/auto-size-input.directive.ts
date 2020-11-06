@@ -13,20 +13,17 @@ export class AutoSizeInputDirective implements AfterContentChecked {
 	@Input() includeBorders = false;
 	@Input() includePadding = true;
 	@Input() includePlaceholder = true;
-	isEdge = false;
-	isIE = false;
 	@Input() maxWidth = -1;
 	@Input() minWidth = -1;
 	@Input() setParentWidth = false;
 
 	constructor(
 		@Inject(DOCUMENT) private document: Document,
+		private window: Window,
 		private element: ElementRef,
 		@Optional() private ngModel: NgModel,
 		private renderer: Renderer2,
 	) {
-		this.isIE = !!document['DOCUMENT']; // Internet Explorer 6-11
-		this.isEdge = !this.isIE && !!window['StyleMedia']; 	// Edge 20+
 	}
 
 	get borderWidth(): number {
@@ -48,8 +45,6 @@ export class AutoSizeInputDirective implements AfterContentChecked {
 	}
 
 	setWidth(width: number): void {
-		if (this.isEdge) width = width + 2;
-
 		const element = this.element.nativeElement;
 		const parent = this.renderer.parentNode(element);
 		this.setParentWidth ? this.renderer.setStyle(parent, 'width', width + 'px')

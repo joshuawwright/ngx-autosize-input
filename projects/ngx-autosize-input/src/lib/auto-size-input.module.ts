@@ -5,13 +5,16 @@ import { AutoSizeInputDirective } from './auto-size-input.directive';
 
 @NgModule({
 	imports: [
-		CommonModule
+		CommonModule,
 	],
 	declarations: [
-		AutoSizeInputDirective
+		AutoSizeInputDirective,
 	],
 	exports: [
-		AutoSizeInputDirective
-	]
+		AutoSizeInputDirective,
+	],
+	providers: [
+		{ provide: Window, useValue: window },
+	],
 })
 export class AutoSizeInputModule {}
