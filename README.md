@@ -2,7 +2,7 @@
 An Angular directive that automatically adjusts the width of an input element to its content. Unlike other auto-grow directives, it is unique because it both shrinks and increases the width based on the content.
 
 ## Stack Blitz Demo
-https://stackblitz.com/edit/ngx-autosize-input
+https://stackblitz.com/edit/ngx-autosize-input-10?file=src/app/app.component.html
 
 ## Installation
 
