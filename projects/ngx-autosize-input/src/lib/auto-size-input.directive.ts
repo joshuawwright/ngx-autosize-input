@@ -35,7 +35,8 @@ export class AutoSizeInputDirective implements AfterContentChecked {
 	}
 
 	@HostListener('input', ['$event.target'])
-	public onInput(): void {
+	public onInput(event: Event):void
+	{
 		this.updateWidth();
 	}
 
@@ -66,6 +67,7 @@ export class AutoSizeInputDirective implements AfterContentChecked {
 	}
 
 	updateWidth(): void {
+		console.log(this.ngModel.value);
 		const inputText = this.ngModel ? this.ngModel.value : this._getProperty('value');
 		const placeHolderText = this._getProperty('placeholder');
 		const inputTextWidth =
