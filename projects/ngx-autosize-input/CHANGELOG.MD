@@ -1,3 +1,6 @@
+##10.0.2 - 10.0.4
+Fixed ChangeDetection.OnPush compatibility.
+
 ##10.0.1
 Updated StackBlitz link in readMe.
 

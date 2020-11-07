@@ -1,11 +1,14 @@
-import { AfterContentChecked, Directive, ElementRef, HostListener, Input, Optional, Renderer2 } from '@angular/core';
+import {
+	AfterContentChecked, AfterViewInit, Directive, ElementRef, HostListener, Input, Optional, Renderer2,
+} from '@angular/core';
 import { NgModel } from '@angular/forms';
+import { first } from 'rxjs/operators';
 import { WidthProperty } from './width-properties.type';
 
 @Directive({
 	selector: '[autoSizeInput]',
 })
-export class AutoSizeInputDirective implements AfterContentChecked {
+export class AutoSizeInputDirective implements AfterContentChecked, AfterViewInit {
 	@Input() extraWidth = 0;
 	@Input() includeBorders = false;
 	@Input() includePadding = true;
@@ -30,13 +33,16 @@ export class AutoSizeInputDirective implements AfterContentChecked {
 			this._getPropertyWidth('padding-left') + this._getPropertyWidth('padding-right') : 0;
 	}
 
-	ngAfterContentChecked(): void {
+	ngAfterContentChecked() {
 		this.updateWidth();
 	}
 
+	ngAfterViewInit() {
+		if (this.ngModel) this.ngModel.valueChanges.pipe(first()).subscribe(() => this.updateWidth());
+	}
+
 	@HostListener('input', ['$event.target'])
-	public onInput(event: Event):void
-	{
+	public onInput(event: Event): void {
 		this.updateWidth();
 	}
 
@@ -67,7 +73,6 @@ export class AutoSizeInputDirective implements AfterContentChecked {
 	}
 
 	updateWidth(): void {
-		console.log(this.ngModel.value);
 		const inputText = this.ngModel ? this.ngModel.value : this._getProperty('value');
 		const placeHolderText = this._getProperty('placeholder');
 		const inputTextWidth =
