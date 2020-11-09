@@ -1,4 +1,1 @@
-export type WidthProperty =
-	'border'
-	|'padding-left'
-	|'padding-right';
+export type WidthProperty = 'border-left'|'border-right'|'padding-left'|'padding-right';

@@ -1,3 +1,6 @@
+##10.0.5
+Simplified code and added ability to inject options.
+
 ##10.0.2 - 10.0.4
 Fixed ChangeDetection.OnPush compatibility.
 
