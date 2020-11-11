@@ -2,7 +2,7 @@ import {
 	AfterContentChecked, AfterViewInit, Directive, ElementRef, HostListener, Inject, Input, Optional, Renderer2,
 } from '@angular/core';
 import { NgModel } from '@angular/forms';
-import { first } from 'rxjs/operators';
+import { filter, take } from 'rxjs/operators';
 import {
 	AUTO_SIZE_INPUT_OPTIONS, AutoSizeInputOptions, DEFAULT_AUTO_SIZE_INPUT_OPTIONS,
 } from './auto-size-input.options';
@@ -49,7 +49,12 @@ export class AutoSizeInputDirective implements AfterContentChecked, AfterViewIni
 	}
 
 	ngAfterViewInit() {
-		if (this.ngModel) this.ngModel.valueChanges.pipe(first()).subscribe(() => this.updateWidth());
+		if (this.ngModel) {
+			this.ngModel.valueChanges.pipe(
+				filter(val => !!val), 
+				take(1)
+			).subscribe(() => this.updateWidth());
+		}
 	}
 
 	@HostListener('input', ['$event.target'])
