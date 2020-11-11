@@ -1,3 +1,6 @@
+##10.0.6
+Improved support for NgModel, and added takeUntil logic to prevent memory leaks.
+
 ##10.0.5
 Simplified code and added ability to inject options.
 

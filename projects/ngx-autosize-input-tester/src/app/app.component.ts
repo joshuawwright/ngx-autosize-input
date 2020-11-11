@@ -11,7 +11,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     </label>
     <br>
     <input
-      [style.width]="'100%'"
       autoSizeInput
       [(ngModel)]="name"
       type="text"

@@ -1,8 +1,9 @@
 import {
-	AfterContentChecked, AfterViewInit, Directive, ElementRef, HostListener, Inject, Input, Optional, Renderer2,
+	AfterViewInit, Directive, ElementRef, HostListener, Inject, Input, OnDestroy, Optional, Renderer2,
 } from '@angular/core';
 import { NgModel } from '@angular/forms';
-import { filter, take } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { takeUntil, tap } from 'rxjs/operators';
 import {
 	AUTO_SIZE_INPUT_OPTIONS, AutoSizeInputOptions, DEFAULT_AUTO_SIZE_INPUT_OPTIONS,
 } from './auto-size-input.options';
@@ -11,7 +12,7 @@ import { WidthProperty } from './width-properties.type';
 @Directive({
 	selector: '[autoSizeInput]',
 })
-export class AutoSizeInputDirective implements AfterContentChecked, AfterViewInit {
+export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
 	@Input() extraWidth = this.defaultOptions.extraWidth;
 	@Input() includeBorders = this.defaultOptions.includeBorders;
 	@Input() includePadding = this.defaultOptions.includePadding;
@@ -19,6 +20,7 @@ export class AutoSizeInputDirective implements AfterContentChecked, AfterViewIni
 	@Input() maxWidth = this.defaultOptions.maxWidth;
 	@Input() minWidth = this.defaultOptions.minWidth;
 	@Input() setParentWidth = this.defaultOptions.setParentWidth;
+	private destroy$ = new Subject<void>();
 
 	constructor(
 		private element: ElementRef,
@@ -44,22 +46,25 @@ export class AutoSizeInputDirective implements AfterContentChecked, AfterViewIni
 		return getComputedStyle(this.element.nativeElement, '');
 	}
 
-	ngAfterContentChecked() {
-		this.updateWidth();
-	}
-
 	ngAfterViewInit() {
 		if (this.ngModel) {
 			this.ngModel.valueChanges.pipe(
-				filter(val => !!val), 
-				take(1)
-			).subscribe(() => this.updateWidth());
+				tap(() => this.updateWidth()),
+				takeUntil(this.destroy$),
+			).subscribe();
+		} else {
+			this.updateWidth();
 		}
+	}
+
+	ngOnDestroy(): void {
+		this.destroy$.next();
+		this.destroy$.complete();
 	}
 
 	@HostListener('input', ['$event.target'])
 	public onInput(event: Event): void {
-		this.updateWidth();
+		if (!this.ngModel) this.updateWidth();
 	}
 
 	setWidth(width: number): void {
