@@ -1,3 +1,6 @@
+##11.0.0 - 11.0.1
+Upgraded to Angular 11.
+
 ##10.0.6
 Improved support for NgModel, and added takeUntil logic to prevent memory leaks.
 
