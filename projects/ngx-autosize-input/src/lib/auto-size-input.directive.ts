@@ -20,6 +20,7 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
 	@Input() maxWidth = this.defaultOptions.maxWidth;
 	@Input() minWidth = this.defaultOptions.minWidth;
 	@Input() setParentWidth = this.defaultOptions.setParentWidth;
+	@Input() usePlaceHolderWhenEmpty = this.defaultOptions.usePlaceHolderWhenEmpty;
 	private destroy$ = new Subject<void>();
 
 	constructor(
@@ -101,7 +102,15 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
 		} else if (setMaxWidth) {
 			this.setWidth(this.maxWidth);
 		} else {
-			this.setWidthUsingText(setPlaceHolderWidth ? placeHolderText : inputText);
+			let textForWidth: string;
+			// If user has usePlaceHolderWhenEmpty enabled, only use placeholder text for width
+			// if the input text is empty
+			if (setPlaceHolderWidth && (inputText.length === 0 || !this.usePlaceHolderWhenEmpty)) {
+				textForWidth = placeHolderText;
+			} else {
+				textForWidth = inputText;
+			}
+			this.setWidthUsingText(textForWidth);
 		}
 	}
 
