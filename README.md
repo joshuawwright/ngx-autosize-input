@@ -147,6 +147,17 @@ Example (input wrapped in an Angular Material form field component):
 </mat-form-field>
 ```
 
+### \[usePlaceholderWhenEmpty]
+
+Sets width to placeholder width, only when value is empty.
+
+Default Value: false
+
+Example (turn on placeholder when empty):
+ ```
+<input autoSizeInput [usePlaceholderWhenEmpty]="true">
+```
+
 ## Author
 Joshua Wright
 

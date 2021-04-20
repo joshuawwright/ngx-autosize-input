@@ -79,6 +79,12 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
 		this.setWidth(this.textWidth(text) + this.extraWidth + this.borderWidth + this.paddingWidth);
 	}
 
+	// Check placeholder width settings and set text width
+	textForWidth(inputText: string, placeHolderText: string, setPlaceHolderWidth: boolean) {
+		return (setPlaceHolderWidth && (inputText.length === 0 || !this.usePlaceHolderWhenEmpty)) ?
+			placeHolderText : inputText;
+	}
+
 	textWidth(value: string): number {
 		const ctx = this.renderer.createElement('canvas').getContext('2d');
 		const { fontStyle, fontVariant, fontWeight, fontSize, fontFamily } = this.style;
@@ -102,15 +108,7 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
 		} else if (setMaxWidth) {
 			this.setWidth(this.maxWidth);
 		} else {
-			let textForWidth: string;
-			// If user has usePlaceHolderWhenEmpty enabled, only use placeholder text for width
-			// if the input text is empty
-			if (setPlaceHolderWidth && (inputText.length === 0 || !this.usePlaceHolderWhenEmpty)) {
-				textForWidth = placeHolderText;
-			} else {
-				textForWidth = inputText;
-			}
-			this.setWidthUsingText(textForWidth);
+			this.setWidthUsingText(this.textForWidth(inputText, placeHolderText, setPlaceHolderWidth));
 		}
 	}
 

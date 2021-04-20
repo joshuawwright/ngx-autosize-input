@@ -19,9 +19,9 @@ Add AutoSizeInputModule to your @NgModule imports:
 import {AutoSizeInputModule} from 'ngx-autosize-input';
 
 @NgModule({
-  imports: [
-    AutoSizeInputModule
-  ]
+	imports: [
+		AutoSizeInputModule
+	]
 })
 ```
 
@@ -72,7 +72,7 @@ Add extra width, in units of pixels.
 
 Default Value: 0px
 
-Example (add 10px): 
+Example (add 10px):
  ```
 <input autoSizeInput [extraWidth]="10">
 ```
@@ -84,7 +84,7 @@ Note that [minimumWidth] will override this property.
 
 Default Value: true
 
-Example (turn off placeholder): 
+Example (turn off placeholder):
  ```
 <input autoSizeInput [includePlaceholder]="false">
 ```
@@ -107,7 +107,7 @@ Includes padding width, so that text is not cut off.
 
 Default Value: true
 
-Example (turn off include padding): 
+Example (turn off include padding):
  ```
 <input autoSizeInput [includePadding]="false">
 ```
@@ -118,7 +118,7 @@ Sets minimum width, in units of pixels.
 
 Default Value: 0
 
-Example (50px minimum width): 
+Example (50px minimum width):
  ```
 <input autoSizeInput [minWidth]="50">
 ```
@@ -129,7 +129,7 @@ Sets maximum width, in units of pixels.
 
 Default Value: 0
 
-Example (100px maximum width): 
+Example (100px maximum width):
  ```
 <input autoSizeInput [maxWidth]="100">
 ```
@@ -140,11 +140,22 @@ Sets parent width automatically, instead of input width. Useful when you need to
 
 Default Value: false
 
-Example (input wrapped in an Angular Material form field component): 
+Example (input wrapped in an Angular Material form field component):
  ```
 <mat-form-field> // This will be resized
     <input autoSizeInput [setParentWidth]="true">
 </mat-form-field>
+```
+
+### \[usePlaceholderWhenEmpty]
+
+Sets width to placeholder width, only when value is empty.
+
+Default Value: false
+
+Example (turn on placeholder when empty):
+ ```
+<input autoSizeInput [usePlaceholderWhenEmpty]="true">
 ```
 
 ## Author
