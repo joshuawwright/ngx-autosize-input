@@ -1,3 +1,6 @@
+##11.0.0 - 11.0.4
+Added use placeholder when empty feature, that sets the width to the placeholder only when the input is empty.
+
 ##11.0.0 - 11.0.1
 Upgraded to Angular 11.
 
