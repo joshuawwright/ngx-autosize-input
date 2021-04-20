@@ -13,6 +13,7 @@ const CUSTOM_AUTO_SIZE_INPUT_OPTIONS: AutoSizeInputOptions = {
 	maxWidth: -1,
 	minWidth: -1,
 	setParentWidth: false,
+	usePlaceHolderWhenEmpty: false
 }
 
 @NgModule({

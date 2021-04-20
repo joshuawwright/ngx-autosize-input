@@ -10,6 +10,7 @@ export interface AutoSizeInputOptions {
 	maxWidth: number;
 	minWidth: number;
 	setParentWidth: boolean;
+	usePlaceHolderWhenEmpty: boolean;
 }
 
 export const DEFAULT_AUTO_SIZE_INPUT_OPTIONS: AutoSizeInputOptions = {
@@ -20,4 +21,5 @@ export const DEFAULT_AUTO_SIZE_INPUT_OPTIONS: AutoSizeInputOptions = {
 	maxWidth: -1,
 	minWidth: -1,
 	setParentWidth: false,
+	usePlaceHolderWhenEmpty: false,
 }
