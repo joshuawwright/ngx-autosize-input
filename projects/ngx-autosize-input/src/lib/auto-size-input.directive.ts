@@ -1,7 +1,7 @@
 import {
 	AfterViewInit, Directive, ElementRef, HostListener, Inject, Input, OnDestroy, Optional, Renderer2,
 } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { NgControl, NgModel } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import {
@@ -21,11 +21,13 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
 	@Input() minWidth = this.defaultOptions.minWidth;
 	@Input() setParentWidth = this.defaultOptions.setParentWidth;
 	@Input() usePlaceHolderWhenEmpty = this.defaultOptions.usePlaceHolderWhenEmpty;
+	@Input() useValueProperty = false;
 	private destroy$ = new Subject<void>();
 
 	constructor(
 		private element: ElementRef,
 		@Optional() private ngModel: NgModel,
+		@Optional() private ngControl: NgControl,
 		@Optional() @Inject(AUTO_SIZE_INPUT_OPTIONS) readonly options: AutoSizeInputOptions,
 		private renderer: Renderer2,
 	) {
@@ -53,6 +55,12 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
 				tap(() => this.updateWidth()),
 				takeUntil(this.destroy$),
 			).subscribe();
+		} else if (this.ngControl) {
+			this.ngControl.valueChanges.pipe(
+				tap(() => this.updateWidth()),
+				takeUntil(this.destroy$),
+			).subscribe();
+			this.updateWidth();
 		} else {
 			this.updateWidth();
 		}
@@ -65,7 +73,21 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
 
 	@HostListener('input', ['$event.target'])
 	public onInput(event: Event): void {
-		if (!this.ngModel) this.updateWidth();
+		if (!this.ngModel && !this.ngControl) {
+			this.updateWidth();
+		}
+	}
+
+	private getInputValue(): string {
+		let value: string;
+		if (this.useValueProperty) {
+			value = this._getProperty('value');
+		} else if (this.ngModel) {
+			value = this.ngModel.value;
+		} else if (this.ngControl) {
+			value = this.ngControl.value;
+		}
+		return value || this._getProperty('value') || '';
 	}
 
 	setWidth(width: number): void {
@@ -95,7 +117,7 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
 	}
 
 	updateWidth(): void {
-		const inputText = (this.ngModel ? this.ngModel.value : this._getProperty('value')) || '';
+		const inputText = this.getInputValue();
 		const placeHolderText = this._getProperty('placeholder');
 		const inputTextWidth = this.textWidth(inputText) + this.extraWidth + this.borderWidth + this.paddingWidth;
 		const setMinWidth = this.minWidth > 0 && this.minWidth > inputTextWidth;
