@@ -1,3 +1,6 @@
+##11.0.4 - 11.0.5
+Support added for template driven form controls and use value property.
+
 ##11.0.0 - 11.0.4
 Added use placeholder when empty feature, that sets the width to the placeholder only when the input is empty.
 

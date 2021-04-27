@@ -159,6 +159,21 @@ Example (turn on placeholder when empty):
 <input autoSizeInput [usePlaceholderWhenEmpty]="true">
 ```
 
+### \[useValueProperty]
+
+If the value of the form control is an object but the input value is formatted setting this
+value to true will use the value property of the input instead of retreiving the value from
+the form control or model. This option is not globally configurable and must be set on each input.
+
+Default Value: false
+
+Example (ngbTypeahead with inputFormatter):
+`search$` returns an array of objects `{ firstName: string; lastName: string; }[]` and `formatInput` transforms the selected object to ``` `${firstName} ${lastName}` ```. The value applied to the form control will be the object
+selected so in-order to get the actual string value in the input we need to look at the value property.
+ ```
+<input autoSizeInput [useValueProperty]="true" formControlName="fullName" [ngbTypeahead]="search$" [inputFormatter]="formatInput">
+```
+
 ## Author
 Joshua Wright
 
