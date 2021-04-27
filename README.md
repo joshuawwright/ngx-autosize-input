@@ -73,7 +73,7 @@ Add extra width, in units of pixels.
 
 Default Value: 0px
 
-Example (add 10px): 
+Example (add 10px):
  ```
 <input autoSizeInput [extraWidth]="10">
 ```
@@ -85,7 +85,7 @@ Note that [minimumWidth] will override this property.
 
 Default Value: true
 
-Example (turn off placeholder): 
+Example (turn off placeholder):
  ```
 <input autoSizeInput [includePlaceholder]="false">
 ```
@@ -108,7 +108,7 @@ Includes padding width, so that text is not cut off.
 
 Default Value: true
 
-Example (turn off include padding): 
+Example (turn off include padding):
  ```
 <input autoSizeInput [includePadding]="false">
 ```
@@ -119,7 +119,7 @@ Sets minimum width, in units of pixels.
 
 Default Value: 0
 
-Example (50px minimum width): 
+Example (50px minimum width):
  ```
 <input autoSizeInput [minWidth]="50">
 ```
@@ -130,7 +130,7 @@ Sets maximum width, in units of pixels.
 
 Default Value: 0
 
-Example (100px maximum width): 
+Example (100px maximum width):
  ```
 <input autoSizeInput [maxWidth]="100">
 ```
@@ -141,7 +141,7 @@ Sets parent width automatically, instead of input width. Useful when you need to
 
 Default Value: false
 
-Example (input wrapped in an Angular Material form field component): 
+Example (input wrapped in an Angular Material form field component):
  ```
 <mat-form-field> // This will be resized
     <input autoSizeInput [setParentWidth]="true">
@@ -157,6 +157,21 @@ Default Value: false
 Example (turn on placeholder when empty):
  ```
 <input autoSizeInput [usePlaceholderWhenEmpty]="true">
+```
+
+### \[useValueProperty]
+
+If the value of the form control is an object but the input value is formatted setting this
+value to true will use the value property of the input instead of retreiving the value from
+the form control or model. This option is not globally configurable and must be set on each input.
+
+Default Value: false
+
+Example (ngbTypeahead with inputFormatter):
+`search$` returns an array of objects `{ firstName: string; lastName: string; }[]` and `formatInput` transforms the selected object to ``` `${firstName} ${lastName}` ```. The value applied to the form control will be the object
+selected so in-order to get the actual string value in the input we need to look at the value property.
+ ```
+<input autoSizeInput [useValueProperty]="true" formControlName="fullName" [ngbTypeahead]="search$" [inputFormatter]="formatInput">
 ```
 
 ## Author

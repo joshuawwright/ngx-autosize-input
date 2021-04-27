@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AUTO_SIZE_INPUT_OPTIONS, AutoSizeInputModule, AutoSizeInputOptions } from 'ngx-autosize-input';
 
@@ -24,6 +24,7 @@ const CUSTOM_AUTO_SIZE_INPUT_OPTIONS: AutoSizeInputOptions = {
 		BrowserModule,
 		AutoSizeInputModule,
 		FormsModule,
+		ReactiveFormsModule,
 	],
 	providers: [
 		{ provide: AUTO_SIZE_INPUT_OPTIONS, useValue: CUSTOM_AUTO_SIZE_INPUT_OPTIONS }
