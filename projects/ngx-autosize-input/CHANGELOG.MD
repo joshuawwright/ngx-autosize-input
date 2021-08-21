@@ -1,3 +1,6 @@
+##12.0.0
+Upgraded to angular 12.
+
 ##11.0.8
 Fixed border compatibility with firefox.
 
