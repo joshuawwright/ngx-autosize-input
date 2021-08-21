@@ -34,7 +34,7 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
 	}
 
 	get borderWidth(): number {
-		return this.includeBorders ? this._sumPropertyValues(['border-right', 'border-left']) : 0;
+		return this.includeBorders ? this._sumPropertyValues(['border-right-width', 'border-left-width']) : 0;
 	}
 
 	get defaultOptions() {
