@@ -1,3 +1,6 @@
+##11.0.8
+Fixed border compatibility with firefox.
+
 ##11.0.4 - 11.0.5
 Support added for template driven form controls and use value property.
 
