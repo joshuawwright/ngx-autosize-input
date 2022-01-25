@@ -28,18 +28,6 @@
             "tsConfig": "projects/ngx-autosize-input/tsconfig.spec.json",
             "karmaConfig": "projects/ngx-autosize-input/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ngx-autosize-input/tsconfig.lib.json",
-              "projects/ngx-autosize-input/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     },
@@ -133,19 +121,6 @@
               "projects/ngx-autosize-input-tester/src/styles.scss"
             ],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ngx-autosize-input-tester/tsconfig.app.json",
-              "projects/ngx-autosize-input-tester/tsconfig.spec.json",
-              "projects/ngx-autosize-input-tester/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         },
         "e2e": {

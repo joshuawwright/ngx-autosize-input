@@ -12,9 +12,9 @@
 			"es2018"
 		]
 	},
-	"angularCompilerOptions": {
-		"enableIvy": false,
-		"skipTemplateCodegen": true,
+  "angularCompilerOptions": {
+    "compilationMode": "partial",
+    "skipTemplateCodegen": true,
 		"strictMetadataEmit": true,
 		"fullTemplateTypeCheck": true,
 		"strictInjectionParameters": true,

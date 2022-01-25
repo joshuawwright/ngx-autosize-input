@@ -1,3 +1,9 @@
+##13.0.1
+Bumped log4js version.
+
+##13.0.0
+Upgraded to angular 13.
+
 ##12.0.0
 Upgraded to angular 12.
 
