@@ -1,5 +1,5 @@
-##13.1.0
-Upgraded to angular 13.1
+##13.1.1
+Updated dependency to address potential security vulnerabilities.
 
 ##13.1.0
 Upgraded to angular 13.1
