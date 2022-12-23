@@ -5,7 +5,7 @@ An Angular directive that automatically adjusts the width of an input element to
 The major version will match the Angular major version going forward (Angular 10+). For example version 10, will work for Angular 10.
 
 ## Stack Blitz Demo
-https://stackblitz.com/edit/ngx-autosize-input-10?file=src/app/app.component.html
+https://stackblitz.com/edit/angular-ivy-dtjmsk?file=src/app/hello.component.ts
 
 ## Installation
 
