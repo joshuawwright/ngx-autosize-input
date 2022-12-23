@@ -5,7 +5,10 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "copy:changelog": "cp CHANGELOG.md dist/libs/ngx-autosize-input/CHANGELOG.md",
+    "copy:readme": "cp README.md dist/libs/ngx-autosize-input/README.md",
+    "package": "nx build ngx-autosize-input && npm run copy:changelog && npm run copy:readme"
   },
   "private": true,
   "dependencies": {
