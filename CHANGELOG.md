@@ -1,4 +1,7 @@
-##15.0.0
+##15.0.2
+Updated dependencies to fix security vulnerabilities.
+
+##15.0.1
 Updated peer dependencies to cover all sub-versions of angular 15
 
 ##15.0.0
