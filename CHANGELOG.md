@@ -1,4 +1,7 @@
 ##15.0.0
+Updated peer dependencies to cover all sub-versions of angular 15
+
+##15.0.0
 Moved to Nx Workspace
 Updated to angular 15
 Added support for letterSpacing
