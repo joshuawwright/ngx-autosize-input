@@ -208,3 +208,41 @@
 [NX Daemon Server] - 2024-02-20T18:33:17.349Z - [REQUEST]: 
 [NX Daemon Server] - 2024-02-20T18:33:17.349Z - [REQUEST]: migrations.json
 [NX Daemon Server] - 2024-02-20T18:33:17.372Z - Time taken for 'hash changed files from watcher' 0.057547000236809254ms
+[NX Daemon Server] - 2024-02-20T18:35:07.472Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-20T18:38:22.195Z - [WATCHER]: README.md was modified
+[NX Daemon Server] - 2024-02-20T18:38:22.196Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-20T18:38:22.396Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-20T18:38:22.396Z - [REQUEST]: README.md
+[NX Daemon Server] - 2024-02-20T18:38:22.397Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-20T18:38:22.429Z - Time taken for 'hash changed files from watcher' 0.2832089997828007ms
+[NX Daemon Server] - 2024-02-20T18:40:15.789Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-20T18:40:15.790Z - [WATCHER]: README.md was modified
+[NX Daemon Server] - 2024-02-20T18:40:15.879Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-20T18:40:16.190Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-20T18:40:16.190Z - [REQUEST]: README.md
+[NX Daemon Server] - 2024-02-20T18:40:16.190Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-20T18:40:16.210Z - Time taken for 'hash changed files from watcher' 0.09386999998241663ms
+[NX Daemon Server] - 2024-02-20T18:41:03.236Z - [WATCHER]: README.md was modified
+[NX Daemon Server] - 2024-02-20T18:41:03.236Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-20T18:41:04.038Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-20T18:41:04.038Z - [REQUEST]: README.md
+[NX Daemon Server] - 2024-02-20T18:41:04.038Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-20T18:41:04.067Z - Time taken for 'hash changed files from watcher' 0.3137779999524355ms
+[NX Daemon Server] - 2024-02-20T18:41:51.022Z - [WATCHER]: README.md was modified
+[NX Daemon Server] - 2024-02-20T18:41:51.022Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-20T18:41:52.625Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-20T18:41:52.625Z - [REQUEST]: README.md
+[NX Daemon Server] - 2024-02-20T18:41:52.625Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-20T18:41:52.652Z - Time taken for 'hash changed files from watcher' 0.3539120005443692ms
+[NX Daemon Server] - 2024-02-20T18:42:22.723Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-20T18:42:22.723Z - [WATCHER]: README.md was modified
+[NX Daemon Server] - 2024-02-20T18:42:25.927Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-20T18:42:25.928Z - [REQUEST]: README.md
+[NX Daemon Server] - 2024-02-20T18:42:25.928Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-20T18:42:25.956Z - Time taken for 'hash changed files from watcher' 0.34465999994426966ms
+[NX Daemon Server] - 2024-02-20T18:43:11.396Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-20T18:43:11.396Z - [WATCHER]: README.md was modified
+[NX Daemon Server] - 2024-02-20T18:43:17.801Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-20T18:43:17.801Z - [REQUEST]: README.md
+[NX Daemon Server] - 2024-02-20T18:43:17.801Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-20T18:43:17.841Z - Time taken for 'hash changed files from watcher' 0.324838999658823ms

@@ -1,6 +1,11 @@
 # ngx-autosize-input
 An Angular directive that automatically adjusts the width of an input element to its content. Unlike other auto-grow directives, it is unique because it both shrinks and increases the width based on the content.
 
+[![npm](https://img.shields.io/npm/v/ngx-autosize-input.svg?style=flat-square)](https://www.npmjs.com/package/ng-packagr)
+[![npm License](https://img.shields.io/npm/l/ngx-autosize-input.svg?style=flat-square)](https://github.com/ng-packagr/ng-packagr/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/joshuawwright/ngx-autosize-input.svg?label=GitHub%20Stars&style=flat-square)](https://https://github.com/joshuawwright/ngx-autosize-input)
+[![npm Downloads](https://img.shields.io/npm/dw/ngx-autosize-input.svg?style=flat-square)](https://www.npmjs.com/package/ngx-autosize-input)
+
 ## Versions
 The major version will match the Angular major version going forward (Angular 10+). For example version 10, will work for Angular 10.
 
