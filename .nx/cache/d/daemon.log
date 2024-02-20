@@ -202,3 +202,9 @@
 [NX Daemon Server] - 2024-02-20T18:32:50.842Z - [WATCHER]: Processing file changes in outputs
 [NX Daemon Server] - 2024-02-20T18:32:51.010Z - [WATCHER]: Processing file changes in outputs
 [NX Daemon Server] - 2024-02-20T18:32:51.144Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-20T18:33:17.249Z - [WATCHER]: migrations.json was deleted
+[NX Daemon Server] - 2024-02-20T18:33:17.249Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-20T18:33:17.349Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-20T18:33:17.349Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-20T18:33:17.349Z - [REQUEST]: migrations.json
+[NX Daemon Server] - 2024-02-20T18:33:17.372Z - Time taken for 'hash changed files from watcher' 0.057547000236809254ms

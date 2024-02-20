@@ -60,84 +60,80 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "tsconfig.base.json",
-        "hash": "4899571859969283834"
-      },
-      {
-        "file": "tools/tsconfig.tools.json",
-        "hash": "16088922570277978783"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "16267754514737964994"
-      },
-      {
         "file": "nx.json",
         "hash": "11563748075576607578"
-      },
-      {
-        "file": "jest.config.ts",
-        "hash": "12333515226966617182"
-      },
-      {
-        "file": "jest.preset.js",
-        "hash": "9084884494335109525"
-      },
-      {
-        "file": "libs/.gitkeep",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "package-lock.json",
-        "hash": "16807345336610496326"
-      },
-      {
-        "file": "package.json",
-        "hash": "7521835043522125063"
-      },
-      {
-        "file": ".eslintignore",
-        "hash": "7663861978715868291"
-      },
-      {
-        "file": ".nvmrc",
-        "hash": "5185248025180765966"
-      },
-      {
-        "file": "migrations.json",
-        "hash": "11796131350910156246"
       },
       {
         "file": ".eslintrc.json",
         "hash": "18315524891129148814"
       },
       {
-        "file": ".editorconfig",
-        "hash": "5443105041930014821"
-      },
-      {
         "file": ".gitignore",
         "hash": "2178144051909739023"
       },
       {
-        "file": ".prettierignore",
-        "hash": "17733650430415207254"
+        "file": "README.md",
+        "hash": "6425338819046224991"
       },
       {
         "file": "CHANGELOG.md",
         "hash": "12066017453188122908"
       },
       {
-        "file": "apps/.gitkeep",
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "package.json",
+        "hash": "7521835043522125063"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "12333515226966617182"
+      },
+      {
+        "file": "libs/.gitkeep",
         "hash": "3244421341483603138"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "4899571859969283834"
       },
       {
         "file": ".vscode/extensions.json",
         "hash": "235626400633494639"
       },
       {
-        "file": "README.md",
-        "hash": "6425338819046224991"
+        "file": "jest.preset.js",
+        "hash": "9084884494335109525"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "17733650430415207254"
+      },
+      {
+        "file": "tools/tsconfig.tools.json",
+        "hash": "16088922570277978783"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "16807345336610496326"
+      },
+      {
+        "file": ".nvmrc",
+        "hash": "5185248025180765966"
+      },
+      {
+        "file": "apps/.gitkeep",
+        "hash": "3244421341483603138"
       }
     ],
     "projectFileMap": {
