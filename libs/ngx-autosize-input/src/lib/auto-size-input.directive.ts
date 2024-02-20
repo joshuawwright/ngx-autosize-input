@@ -44,7 +44,7 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
   }
 
   get borderWidth(): number {
-    return this.includeBorders ? this._sumPropertyValues(['border-right-width', 'border-left-width']) : 0;
+    return this.includeBorders ? this.sumPropertyValues(['border-right-width', 'border-left-width']) : 0;
   }
 
   get defaultOptions() {
@@ -52,7 +52,7 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
   }
 
   get paddingWidth(): number {
-    return this.includePadding ? this._sumPropertyValues(['padding-left', 'padding-right']) : 0;
+    return this.includePadding ? this.sumPropertyValues(['padding-left', 'padding-right']) : 0;
   }
 
   get style() {
@@ -61,14 +61,13 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     if (this.ngModel) {
-      // @ts-ignore
-      this.ngModel.valueChanges.pipe(
+      this.ngModel.valueChanges?.pipe(
         tap(() => this.updateWidth()),
         takeUntil(this.destroy$),
       ).subscribe();
     } else if (this.ngControl) {
-      // @ts-ignore
-      this.ngControl.valueChanges.pipe(
+
+      this.ngControl.valueChanges?.pipe(
         tap(() => this.updateWidth()),
         takeUntil(this.destroy$),
       ).subscribe();
@@ -119,7 +118,7 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
 
   updateWidth(): void {
     const inputText = this.getInputValue();
-    const placeHolderText = this._getProperty('placeholder');
+    const placeHolderText = this.getProperty('placeholder');
     const inputTextWidth = this.textWidth(inputText) + this.extraWidth + this.borderWidth + this.paddingWidth;
     const setMinWidth = this.minWidth > 0 && this.minWidth > inputTextWidth;
     const setPlaceHolderWidth = this.includePlaceholder && placeHolderText.length > 0 &&
@@ -136,23 +135,22 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
   }
 
   private getInputValue(): string {
-    let value: string;
+    let value = '';
     if (this.useValueProperty) {
-      value = this._getProperty('value');
+      value = this.getProperty('value');
     } else if (this.ngModel) {
       value = this.ngModel.value;
     } else if (this.ngControl) {
       value = this.ngControl.value;
     }
-    // @ts-ignore
-    return value || this._getProperty('value') || '';
+    return value || this.getProperty('value') || '';
   }
 
-  private _getProperty(property: 'value' | 'placeholder') {
+  private getProperty(property: 'value' | 'placeholder') {
     return this.element.nativeElement?.[property];
   }
 
-  private _sumPropertyValues(properties: WidthProperty[]): number {
+  private sumPropertyValues(properties: WidthProperty[]): number {
     return properties.map(property => parseInt(this.style.getPropertyValue(property), 10))
       .reduce((a, b) => a + b, 0);
   }

@@ -1,3 +1,12 @@
+##16.0.0
+Updated to Angular 16.
+
+##15.0.4
+Updated rxjs peer dependencies.
+
+##15.0.4
+Updated rxjs peer dependencies.
+
 ##15.0.3
 Fix release issue
 
@@ -5,27 +14,27 @@ Fix release issue
 Updated dependencies to fix security vulnerabilities.
 
 ##15.0.1
-Updated peer dependencies to cover all sub-versions of angular 15
+Updated peer dependencies to cover all sub-versions of Angular 15
 
 ##15.0.0
 Moved to Nx Workspace
-Updated to angular 15
+Updated to Angular 15
 Added support for letterSpacing
 
 ##13.1.1
 Updated dependency to address potential security vulnerabilities.
 
 ##13.1.0
-Upgraded to angular 13.1
+Upgraded to Angular 13.1
 
 ##13.0.1
 Bumped log4js version.
 
 ##13.0.0
-Upgraded to angular 13.
+Upgraded to Angular 13.
 
 ##12.0.0
-Upgraded to angular 12.
+Upgraded to Angular 12.
 
 ##11.0.8
 Fixed border compatibility with firefox.
@@ -52,7 +61,7 @@ Fixed ChangeDetection.OnPush compatibility.
 Updated StackBlitz link in readMe.
 
 ##10.0.0
-From now on the major version will be the same as the angular version.
+From now on the major version will be the same as the Angular version.
 Renamed directive from AutoSizeInput to autoSizeInput, to match Angular Style Guide.
 Remove Internet Explorer detection, as the user agent styling can be adjusted using CSS.
 Added support for NgModel, so that ChangeDetectionStrategy.OnPush can be used.
@@ -78,4 +87,4 @@ Added ngOnChanges width update.
 
 ##2.3.0
 Migrated to Angular library structure
-Switched to using renderer to follow angular best practices
+Switched to using renderer to follow Angular best practices
