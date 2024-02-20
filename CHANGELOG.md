@@ -1,3 +1,6 @@
+##17.0.0
+Updated to Angular 17.
+
 ##16.0.0
 Updated to Angular 16.
 

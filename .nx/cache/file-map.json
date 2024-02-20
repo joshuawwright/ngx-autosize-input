@@ -1,0 +1,369 @@
+{
+  "version": "6.0",
+  "nxVersion": "18.0.4",
+  "deps": {
+    "@angular/animations": "^17.2.0",
+    "@angular/common": "^17.2.0",
+    "@angular/compiler": "^17.2.0",
+    "@angular/core": "^17.2.0",
+    "@angular/forms": "^17.2.0",
+    "@angular/platform-browser": "^17.2.0",
+    "@angular/platform-browser-dynamic": "^17.2.0",
+    "@angular/router": "^17.2.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3",
+    "@angular-devkit/build-angular": "^17.2.0",
+    "@angular-devkit/core": "^17.2.0",
+    "@angular-devkit/schematics": "^17.2.0",
+    "@angular-eslint/eslint-plugin": "~17.2.0",
+    "@angular-eslint/eslint-plugin-template": "~17.2.0",
+    "@angular-eslint/template-parser": "~17.2.0",
+    "@angular/cli": "~17.2.0",
+    "@angular/compiler-cli": "~17.2.0",
+    "@angular/language-service": "~17.2.0",
+    "@nx/angular": "18.0.4",
+    "@nx/cypress": "18.0.4",
+    "@nx/eslint-plugin": "18.0.4",
+    "@nx/jest": "18.0.4",
+    "@nx/linter": "18.0.4",
+    "@nx/workspace": "18.0.4",
+    "@schematics/angular": "~17.2.0",
+    "@types/jest": "29.4.4",
+    "@types/node": "18.16.9",
+    "@typescript-eslint/eslint-plugin": "6.21.0",
+    "@typescript-eslint/parser": "6.21.0",
+    "cypress": "^13.0.0",
+    "eslint": "8.48.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-cypress": "2.15.1",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "jest-preset-angular": "13.1.6",
+    "ng-packagr": "17.2.0",
+    "nx": "18.0.4",
+    "postcss": "^8.4.5",
+    "postcss-import": "~14.1.0",
+    "postcss-preset-env": "~7.5.0",
+    "postcss-url": "~10.1.3",
+    "prettier": "^2.6.2",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
+    "typescript": "5.3.3"
+  },
+  "pathMappings": {
+    "ngx-autosize-input": [
+      "libs/ngx-autosize-input/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "tsconfig.base.json",
+        "hash": "4899571859969283834"
+      },
+      {
+        "file": "tools/tsconfig.tools.json",
+        "hash": "16088922570277978783"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "nx.json",
+        "hash": "11563748075576607578"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "12333515226966617182"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9084884494335109525"
+      },
+      {
+        "file": "libs/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "16807345336610496326"
+      },
+      {
+        "file": "package.json",
+        "hash": "7521835043522125063"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": ".nvmrc",
+        "hash": "5185248025180765966"
+      },
+      {
+        "file": "migrations.json",
+        "hash": "11796131350910156246"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "18315524891129148814"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "2178144051909739023"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "17733650430415207254"
+      },
+      {
+        "file": "CHANGELOG.md",
+        "hash": "12066017453188122908"
+      },
+      {
+        "file": "apps/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "235626400633494639"
+      },
+      {
+        "file": "README.md",
+        "hash": "6425338819046224991"
+      }
+    ],
+    "projectFileMap": {
+      "ngx-autosize-input": [
+        {
+          "file": "libs/ngx-autosize-input/.eslintrc.json",
+          "hash": "12592799238151579771"
+        },
+        {
+          "file": "libs/ngx-autosize-input/jest.config.ts",
+          "hash": "12386534077991527185"
+        },
+        {
+          "file": "libs/ngx-autosize-input/ng-package.json",
+          "hash": "8980669799308645762"
+        },
+        {
+          "file": "libs/ngx-autosize-input/package.json",
+          "hash": "14897229736553261976",
+          "deps": [
+            "npm:tslib",
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "libs/ngx-autosize-input/project.json",
+          "hash": "14661942480599518863"
+        },
+        {
+          "file": "libs/ngx-autosize-input/src/index.ts",
+          "hash": "3563081483886305042"
+        },
+        {
+          "file": "libs/ngx-autosize-input/src/lib/auto-size-input.directive.spec.ts",
+          "hash": "16016978338972453026"
+        },
+        {
+          "file": "libs/ngx-autosize-input/src/lib/auto-size-input.directive.ts",
+          "hash": "2790302489048742148",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:rxjs",
+            "npm:rxjs/operators"
+          ]
+        },
+        {
+          "file": "libs/ngx-autosize-input/src/lib/auto-size-input.module.ts",
+          "hash": "665118539582982162",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/ngx-autosize-input/src/lib/auto-size-input.options.ts",
+          "hash": "7198885024648007168",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/ngx-autosize-input/src/lib/width-properties.type.ts",
+          "hash": "2246888898912837855"
+        },
+        {
+          "file": "libs/ngx-autosize-input/src/test-setup.ts",
+          "hash": "17711435995618823417",
+          "deps": [
+            "npm:jest-preset-angular/setup-jest"
+          ]
+        },
+        {
+          "file": "libs/ngx-autosize-input/tsconfig.json",
+          "hash": "15487755565970508470"
+        },
+        {
+          "file": "libs/ngx-autosize-input/tsconfig.lib.json",
+          "hash": "16980941095143460879"
+        },
+        {
+          "file": "libs/ngx-autosize-input/tsconfig.lib.prod.json",
+          "hash": "174503844014784742"
+        },
+        {
+          "file": "libs/ngx-autosize-input/tsconfig.spec.json",
+          "hash": "7670846817526018622"
+        }
+      ],
+      "tester-e2e": [
+        {
+          "file": "apps/tester-e2e/.eslintrc.json",
+          "hash": "15523834149352881398"
+        },
+        {
+          "file": "apps/tester-e2e/cypress.config.ts",
+          "hash": "14393818110001737532",
+          "deps": [
+            "npm:cypress",
+            "npm:@nx/cypress/plugins/cypress-preset"
+          ]
+        },
+        {
+          "file": "apps/tester-e2e/project.json",
+          "hash": "2765644318724452792"
+        },
+        {
+          "file": "apps/tester-e2e/src/e2e/app.cy.ts",
+          "hash": "17012209893911828605"
+        },
+        {
+          "file": "apps/tester-e2e/src/fixtures/example.json",
+          "hash": "11614668686582597233"
+        },
+        {
+          "file": "apps/tester-e2e/src/support/app.po.ts",
+          "hash": "11157016311132186162"
+        },
+        {
+          "file": "apps/tester-e2e/src/support/commands.ts",
+          "hash": "7314691991044890572"
+        },
+        {
+          "file": "apps/tester-e2e/src/support/e2e.ts",
+          "hash": "3666078656922506009"
+        },
+        {
+          "file": "apps/tester-e2e/tsconfig.json",
+          "hash": "3839629211904585536"
+        }
+      ],
+      "tester": [
+        {
+          "file": "apps/tester/.eslintrc.json",
+          "hash": "12592799238151579771"
+        },
+        {
+          "file": "apps/tester/jest.config.ts",
+          "hash": "3621779658192266114"
+        },
+        {
+          "file": "apps/tester/project.json",
+          "hash": "16034847378365655816"
+        },
+        {
+          "file": "apps/tester/src/app/app.component.html",
+          "hash": "7304689888600604861"
+        },
+        {
+          "file": "apps/tester/src/app/app.component.scss",
+          "hash": "9650264488394489345"
+        },
+        {
+          "file": "apps/tester/src/app/app.component.spec.ts",
+          "hash": "1243178193619490697",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/tester/src/app/app.component.ts",
+          "hash": "6956920963122702708",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "apps/tester/src/app/app.module.ts",
+          "hash": "17907774177410920463",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "ngx-autosize-input",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "apps/tester/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/tester/src/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/tester/src/index.html",
+          "hash": "12805518105257456511"
+        },
+        {
+          "file": "apps/tester/src/main.ts",
+          "hash": "3259059517603285449",
+          "deps": [
+            "npm:@angular/platform-browser-dynamic"
+          ]
+        },
+        {
+          "file": "apps/tester/src/styles.scss",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "apps/tester/src/test-setup.ts",
+          "hash": "17711435995618823417",
+          "deps": [
+            "npm:jest-preset-angular/setup-jest"
+          ]
+        },
+        {
+          "file": "apps/tester/tsconfig.app.json",
+          "hash": "8365644956319658761"
+        },
+        {
+          "file": "apps/tester/tsconfig.editor.json",
+          "hash": "17511610827034788226"
+        },
+        {
+          "file": "apps/tester/tsconfig.json",
+          "hash": "12094030803572703611"
+        },
+        {
+          "file": "apps/tester/tsconfig.spec.json",
+          "hash": "7670846817526018622"
+        }
+      ]
+    }
+  }
+}
