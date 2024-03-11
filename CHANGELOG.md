@@ -1,3 +1,6 @@
+##17.0.1
+Fixed peer dependencies.
+
 ##17.0.0
 Updated to Angular 17.
 
