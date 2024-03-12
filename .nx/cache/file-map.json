@@ -10,6 +10,7 @@
     "@angular/platform-browser": "^17.2.0",
     "@angular/platform-browser-dynamic": "^17.2.0",
     "@angular/router": "^17.2.0",
+    "jest-canvas-mock": "^2.5.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3",
@@ -60,12 +61,60 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "README.md",
-        "hash": "13607311608708963816"
-      },
-      {
         "file": "jest.config.ts",
         "hash": "12333515226966617182"
+      },
+      {
+        "file": "CHANGELOG.md",
+        "hash": "2835469327297443434"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "8551326917262901536"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "4899571859969283834"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9084884494335109525"
+      },
+      {
+        "file": "apps/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": "tools/tsconfig.tools.json",
+        "hash": "16088922570277978783"
+      },
+      {
+        "file": "package.json",
+        "hash": "6218237715846854612"
+      },
+      {
+        "file": ".nvmrc",
+        "hash": "5185248025180765966"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "18315524891129148814"
+      },
+      {
+        "file": "README.md",
+        "hash": "11825725384246343288"
+      },
+      {
+        "file": "nx.json",
+        "hash": "11563748075576607578"
       },
       {
         "file": "libs/.gitkeep",
@@ -76,71 +125,27 @@
         "hash": "5443105041930014821"
       },
       {
-        "file": ".eslintignore",
-        "hash": "7663861978715868291"
-      },
-      {
-        "file": "apps/.gitkeep",
-        "hash": "3244421341483603138"
-      },
-      {
         "file": ".prettierignore",
-        "hash": "17733650430415207254"
-      },
-      {
-        "file": ".nvmrc",
-        "hash": "5185248025180765966"
-      },
-      {
-        "file": "jest.preset.js",
-        "hash": "9084884494335109525"
-      },
-      {
-        "file": "CHANGELOG.md",
-        "hash": "12066017453188122908"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "2178144051909739023"
+        "hash": "13265255507429161414"
       },
       {
         "file": "package-lock.json",
-        "hash": "16807345336610496326"
+        "hash": "5418987468752891902"
       },
       {
-        "file": ".eslintrc.json",
-        "hash": "18315524891129148814"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "16267754514737964994"
-      },
-      {
-        "file": "package.json",
-        "hash": "7521835043522125063"
+        "file": ".github/workflows/ci.yml",
+        "hash": "14644585153578825389"
       },
       {
         "file": ".vscode/extensions.json",
         "hash": "235626400633494639"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "4899571859969283834"
-      },
-      {
-        "file": "tools/tsconfig.tools.json",
-        "hash": "16088922570277978783"
-      },
-      {
-        "file": "nx.json",
-        "hash": "11563748075576607578"
       }
     ],
     "projectFileMap": {
       "ngx-autosize-input": [
         {
           "file": "libs/ngx-autosize-input/.eslintrc.json",
-          "hash": "12592799238151579771"
+          "hash": "4298049289757011775"
         },
         {
           "file": "libs/ngx-autosize-input/jest.config.ts",
@@ -152,7 +157,7 @@
         },
         {
           "file": "libs/ngx-autosize-input/package.json",
-          "hash": "14897229736553261976",
+          "hash": "7959409618380834348",
           "deps": [
             "npm:tslib",
             "npm:@angular/common",
@@ -170,21 +175,26 @@
         },
         {
           "file": "libs/ngx-autosize-input/src/lib/auto-size-input.directive.spec.ts",
-          "hash": "16016978338972453026"
+          "hash": "17631686286290167324",
+          "deps": [
+            "npm:jest-canvas-mock",
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/platform-browser"
+          ]
         },
         {
           "file": "libs/ngx-autosize-input/src/lib/auto-size-input.directive.ts",
-          "hash": "2790302489048742148",
+          "hash": "10698056312529059687",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/forms",
-            "npm:rxjs",
-            "npm:rxjs/operators"
+            "npm:rxjs"
           ]
         },
         {
           "file": "libs/ngx-autosize-input/src/lib/auto-size-input.module.ts",
-          "hash": "665118539582982162",
+          "hash": "2144566302787103411",
           "deps": [
             "npm:@angular/common",
             "npm:@angular/core"
@@ -192,14 +202,18 @@
         },
         {
           "file": "libs/ngx-autosize-input/src/lib/auto-size-input.options.ts",
-          "hash": "7198885024648007168",
+          "hash": "13741732595792286793",
           "deps": [
             "npm:@angular/core"
           ]
         },
         {
-          "file": "libs/ngx-autosize-input/src/lib/width-properties.type.ts",
-          "hash": "2246888898912837855"
+          "file": "libs/ngx-autosize-input/src/lib/border.ts",
+          "hash": "2297141564702032853"
+        },
+        {
+          "file": "libs/ngx-autosize-input/src/lib/padding.ts",
+          "hash": "12398225909422513558"
         },
         {
           "file": "libs/ngx-autosize-input/src/test-setup.ts",
@@ -282,7 +296,7 @@
         },
         {
           "file": "apps/tester/src/app/app.component.html",
-          "hash": "7304689888600604861"
+          "hash": "14866219133372008669"
         },
         {
           "file": "apps/tester/src/app/app.component.scss",
@@ -290,14 +304,14 @@
         },
         {
           "file": "apps/tester/src/app/app.component.spec.ts",
-          "hash": "1243178193619490697",
+          "hash": "10082740844271561992",
           "deps": [
-            "npm:@angular/core/testing"
+            "npm:@angular/core"
           ]
         },
         {
           "file": "apps/tester/src/app/app.component.ts",
-          "hash": "6956920963122702708",
+          "hash": "8342583781279298662",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/forms"
@@ -305,7 +319,7 @@
         },
         {
           "file": "apps/tester/src/app/app.module.ts",
-          "hash": "17907774177410920463",
+          "hash": "5182621791282517818",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/platform-browser",

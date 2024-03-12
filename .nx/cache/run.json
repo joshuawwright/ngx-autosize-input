@@ -1,18 +1,18 @@
 {
   "run": {
-    "command": "nx build ngx-autosize-input",
-    "startTime": "2024-02-20T18:32:50.045Z",
-    "endTime": "2024-02-20T18:32:50.831Z",
+    "command": "nx lint ngx-autosize-input",
+    "startTime": "2024-03-12T19:14:39.362Z",
+    "endTime": "2024-03-12T19:14:40.007Z",
     "inner": false
   },
   "tasks": [
     {
-      "taskId": "ngx-autosize-input:build:production",
-      "target": "build",
+      "taskId": "ngx-autosize-input:lint",
+      "target": "lint",
       "projectName": "ngx-autosize-input",
-      "hash": "3048653980087218710",
-      "startTime": "2024-02-20T18:32:50.048Z",
-      "endTime": "2024-02-20T18:32:50.831Z",
+      "hash": "5639393661232907287",
+      "startTime": "2024-03-12T19:14:39.368Z",
+      "endTime": "2024-03-12T19:14:40.007Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0

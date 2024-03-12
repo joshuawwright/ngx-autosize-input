@@ -17,7 +17,8 @@ import {
   AutoSizeInputOptions,
   DEFAULT_AUTO_SIZE_INPUT_OPTIONS,
 } from './auto-size-input.options';
-import { Border, Padding } from './width-properties.type';
+import { Border } from './border';
+import { Padding } from './padding';
 
 @Directive({
   selector: '[autoSizeInput]',
@@ -33,16 +34,15 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
   @Input() usePlaceHolderWhenEmpty: boolean;
   @Input() useValueProperty = false;
   private destroyed$ = new Subject<void>();
-  private canvasContext: CanvasRenderingContext2D & { letterSpacing: string };
 
   constructor(
     private element: ElementRef,
-    @Optional() private ngModel: NgModel,
-    @Optional() private ngControl: NgControl,
+    private renderer: Renderer2,
+    @Optional() private ngModel?: NgModel,
+    @Optional() private ngControl?: NgControl,
     @Optional()
     @Inject(AUTO_SIZE_INPUT_OPTIONS)
-    readonly options: AutoSizeInputOptions,
-    private renderer: Renderer2
+    readonly options?: AutoSizeInputOptions
   ) {
     const defaultOptions = this.options || DEFAULT_AUTO_SIZE_INPUT_OPTIONS;
     this.extraWidth = defaultOptions.extraWidth;
@@ -53,7 +53,6 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
     this.minWidth = defaultOptions.minWidth;
     this.setParentWidth = defaultOptions.setParentWidth;
     this.usePlaceHolderWhenEmpty = defaultOptions.usePlaceHolderWhenEmpty;
-    this.canvasContext = this.renderer.createElement('canvas').getContext('2d');
   }
 
   private get borderWidth(): number {
@@ -159,7 +158,7 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
   }
 
   @HostListener('input')
-  protected onInput(): void {
+  onInput(): void {
     if (!this.ngModel && !this.ngControl) {
       this.updateWidth();
     }
@@ -171,11 +170,14 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
     if (this.setParentWidth) {
       this.renderer.setStyle(parent, 'width', width + 'px');
     } else {
+      console.log(width);
       this.renderer.setStyle(this.nativeElement, 'width', width + 'px');
     }
   }
 
   private getTextWidth(value: string): number {
+    const context = this.renderer.createElement('canvas').getContext('2d');
+
     const {
       fontStyle,
       fontVariant,
@@ -186,10 +188,10 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
     } = this.style;
 
     // font string format: {normal, normal, 700, 20px, Roboto, "Helvetica Neue", sans-serif}
-    this.canvasContext.font = `${fontStyle} ${fontVariant} ${fontWeight} ${fontSize} ${fontFamily}`;
-    this.canvasContext.letterSpacing = letterSpacing;
+    context.font = `${fontStyle} ${fontVariant} ${fontWeight} ${fontSize} ${fontFamily}`;
+    context.letterSpacing = letterSpacing;
 
-    return this.canvasContext.measureText(value).width;
+    return context.measureText(value).width;
   }
 
   private updateWidth(): void {
@@ -203,7 +205,7 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
   }
 
   private updateWidthWhenControlChanges() {
-    return this.ngControl.valueChanges
+    return this.ngControl?.valueChanges
       ?.pipe(
         tap(() => this.updateWidth()),
         takeUntil(this.destroyed$)
@@ -212,7 +214,7 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
   }
 
   private updateWidthWhenModelChanges() {
-    return this.ngModel.valueChanges
+    return this.ngModel?.valueChanges
       ?.pipe(
         tap(() => this.updateWidth()),
         takeUntil(this.destroyed$)
@@ -224,7 +226,7 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
     return properties.reduce((sum, property) => {
       const value: string = this.style.getPropertyValue(property);
       const width: number = parseInt(value, 10);
-      return isNaN(width) ? sum : sum + width;
+      return sum + width;
     }, 0);
   }
 }
