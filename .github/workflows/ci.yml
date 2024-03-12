@@ -13,6 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
+        with:
+          node-version: 20.x
         run: npm ci
       - name: Lint
         run: npm run lint ngx-autosize-input
