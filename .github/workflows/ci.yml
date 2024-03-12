@@ -20,3 +20,8 @@ jobs:
         run: npm run build ngx-autosize-input
       - name: Run Unit Tests
         run: npm test ngx-autosize-input
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: joshuawwright/ngx-autosize-input
