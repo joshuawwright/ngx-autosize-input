@@ -21,7 +21,7 @@ jobs:
       - name: Build ngx-autosize-input
         run: npm run build ngx-autosize-input
       - name: Run Unit Tests
-        run: npm run ngx-autosize-input --coverage
+        run: npm run test ngx-autosize-input --coverage
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
