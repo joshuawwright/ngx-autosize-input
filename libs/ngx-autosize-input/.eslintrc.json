@@ -9,7 +9,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "ngxAutosizeInput",
+            "prefix": "autoSizeInput",
             "style": "camelCase"
           }
         ],

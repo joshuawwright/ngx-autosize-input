@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test",
+    "start": "nx serve tester",
+    "build": "nx build ngx-autosize-input",
+    "lint": "nx lint ngx-autosize-input",
+    "test": "nx test ngx-autosize-input --coverage --coverageReporters=lcov --skipNxCache",
     "copy:changelog": "cp CHANGELOG.md dist/libs/ngx-autosize-input/CHANGELOG.md",
     "copy:readme": "cp README.md dist/libs/ngx-autosize-input/README.md",
     "package": "nx build ngx-autosize-input && npm run copy:changelog && npm run copy:readme"
@@ -20,6 +21,7 @@
     "@angular/platform-browser": "^17.2.0",
     "@angular/platform-browser-dynamic": "^17.2.0",
     "@angular/router": "^17.2.0",
+    "jest-canvas-mock": "^2.5.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
@@ -64,4 +66,3 @@
     "typescript": "5.3.3"
   }
 }
-
