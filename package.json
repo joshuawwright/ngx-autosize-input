@@ -6,7 +6,7 @@
     "start": "nx serve tester",
     "build": "nx build ngx-autosize-input",
     "lint": "nx lint ngx-autosize-input",
-    "test": "nx test ngx-autosize-input --coverage",
+    "test": "nx test ngx-autosize-input --coverage --coverageReporters=lcov --skipNxCache",
     "copy:changelog": "cp CHANGELOG.md dist/libs/ngx-autosize-input/CHANGELOG.md",
     "copy:readme": "cp README.md dist/libs/ngx-autosize-input/README.md",
     "package": "nx build ngx-autosize-input && npm run copy:changelog && npm run copy:readme"
