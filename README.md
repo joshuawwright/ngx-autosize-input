@@ -6,6 +6,7 @@ An Angular directive that automatically adjusts the width of an input element to
 [![npm License](https://img.shields.io/npm/l/ngx-autosize-input.svg?style=flat-square)](https://github.com/ng-packagr/ng-packagr/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/joshuawwright/ngx-autosize-input.svg?label=GitHub%20Stars&style=flat-square)](https://https://github.com/joshuawwright/ngx-autosize-input)
 [![npm Downloads](https://img.shields.io/npm/dw/ngx-autosize-input.svg?style=flat-square)](https://www.npmjs.com/package/ngx-autosize-input)
+[![codecov](https://codecov.io/github/joshuawwright/ngx-autosize-input/graph/badge.svg?token=6WPEL27FSC)](https://codecov.io/github/joshuawwright/ngx-autosize-input)
 
 ## Versions
 
