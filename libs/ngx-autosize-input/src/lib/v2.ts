@@ -19,6 +19,9 @@ import {
 } from './auto-size-input.options';
 import { Border, Padding } from './width-properties.type';
 
+const DEFAULT_FONT_SIZE = 10;
+const DEFAULT_WIDTH = 0;
+
 @Directive({
   selector: '[autoSizeInput]',
 })
@@ -186,7 +189,9 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
     } = this.style;
 
     // font string format: {normal, normal, 700, 20px, Roboto, "Helvetica Neue", sans-serif}
-    this.canvasContext.font = `${fontStyle} ${fontVariant} ${fontWeight} ${fontSize} ${fontFamily}`;
+    this.canvasContext.font = `${fontStyle} ${fontVariant} ${fontWeight} ${
+      fontSize || DEFAULT_FONT_SIZE
+    }px ${fontFamily}`;
     this.canvasContext.letterSpacing = letterSpacing;
 
     return this.canvasContext.measureText(value).width;
@@ -223,7 +228,7 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
   private sumStylePropertyWidths(...properties: Border[] | Padding[]): number {
     return properties.reduce((sum, property) => {
       const value: string = this.style.getPropertyValue(property);
-      const width: number = parseInt(value, 10);
+      const width: number = parseInt(value, 10) || DEFAULT_WIDTH;
       return isNaN(width) ? sum : sum + width;
     }, 0);
   }

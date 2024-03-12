@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
+    "lint": "nx lint",
     "test": "nx test",
     "copy:changelog": "cp CHANGELOG.md dist/libs/ngx-autosize-input/CHANGELOG.md",
     "copy:readme": "cp README.md dist/libs/ngx-autosize-input/README.md",
@@ -64,4 +65,3 @@
     "typescript": "5.3.3"
   }
 }
-

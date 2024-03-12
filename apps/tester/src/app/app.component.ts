@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {UntypedFormControl, UntypedFormGroup} from "@angular/forms";
+import { Component } from '@angular/core';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'ngx-autosize-input-root',
@@ -7,11 +7,11 @@ import {UntypedFormControl, UntypedFormGroup} from "@angular/forms";
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  name = ''
-  letterSpacing = ''
-  withPlaceholder = ''
-  placeHolderWhenEmpty = ''
+  name = '';
+  letterSpacing = '';
+  withPlaceholder = '';
+  placeHolderWhenEmpty = '';
   form = new UntypedFormGroup({
-    inputWithControlName: new UntypedFormControl('')
+    inputWithControlName: new UntypedFormControl(''),
   });
 }

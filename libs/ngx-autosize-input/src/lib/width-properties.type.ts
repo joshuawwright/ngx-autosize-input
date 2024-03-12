@@ -1,1 +1,9 @@
-export type WidthProperty = 'border-left-width'|'border-right-width'|'padding-left'|'padding-right';
+export enum Border {
+  left = 'border-left-width',
+  right = 'border-right-width',
+}
+
+export enum Padding {
+  left = 'padding-left',
+  right = 'padding-right',
+}

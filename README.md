@@ -1,4 +1,5 @@
 # ngx-autosize-input
+
 An Angular directive that automatically adjusts the width of an input element to its content. Unlike other auto-grow directives, it is unique because it both shrinks and increases the width based on the content.
 
 [![npm](https://img.shields.io/npm/v/ngx-autosize-input.svg?style=flat-square)](https://www.npmjs.com/package/ng-packagr)
@@ -7,9 +8,11 @@ An Angular directive that automatically adjusts the width of an input element to
 [![npm Downloads](https://img.shields.io/npm/dw/ngx-autosize-input.svg?style=flat-square)](https://www.npmjs.com/package/ngx-autosize-input)
 
 ## Versions
+
 The major version will match the Angular major version going forward (Angular 10+). For example version 10, will work for Angular 10.
 
 ## Stack Blitz Demo
+
 https://stackblitz.com/edit/angular-ivy-dtjmsk?file=src/app/hello.component.ts
 
 ## Installation
@@ -56,20 +59,24 @@ const CUSTOM_AUTO_SIZE_INPUT_OPTIONS: AutoSizeInputOptions = {
 })
 ```
 
-
 ## Use Example
+
 Use directly in your HTML templates on an input element:
- ```
+
+```
 <input autoSizeInput>
 ```
 
 ## Using Bootstrap
+
 If using Bootstrap, set the directive to include borders so that the text is not cut off.
- ```
+
+```
 <input autoSizeInput [includeBorders]=true>
 ```
 
 ## Parameters
+
 The following parameters customize the directive.
 
 ### \[extraWidth]
@@ -79,7 +86,8 @@ Add extra width, in units of pixels.
 Default Value: 0px
 
 Example (add 10px):
- ```
+
+```
 <input autoSizeInput [extraWidth]="10">
 ```
 
@@ -91,7 +99,8 @@ Note that [minimumWidth] will override this property.
 Default Value: true
 
 Example (turn off placeholder):
- ```
+
+```
 <input autoSizeInput [includePlaceholder]="false">
 ```
 
@@ -103,7 +112,8 @@ Note only even left and right borders are supported at this time.
 Default Value: false
 
 Example (turn on include borders):
- ```
+
+```
 <input autoSizeInput [includeBorders]="true">
 ```
 
@@ -114,7 +124,8 @@ Includes padding width, so that text is not cut off.
 Default Value: true
 
 Example (turn off include padding):
- ```
+
+```
 <input autoSizeInput [includePadding]="false">
 ```
 
@@ -125,7 +136,8 @@ Sets minimum width, in units of pixels.
 Default Value: 0
 
 Example (50px minimum width):
- ```
+
+```
 <input autoSizeInput [minWidth]="50">
 ```
 
@@ -136,7 +148,8 @@ Sets maximum width, in units of pixels.
 Default Value: 0
 
 Example (100px maximum width):
- ```
+
+```
 <input autoSizeInput [maxWidth]="100">
 ```
 
@@ -147,9 +160,10 @@ Sets parent width automatically, instead of input width. Useful when you need to
 Default Value: false
 
 Example (input wrapped in an Angular Material form field component):
- ```
+
+```
 <mat-form-field> // This will be resized
-    <input autoSizeInput [setParentWidth]="true">
+   <input autoSizeInput [setParentWidth]="true">
 </mat-form-field>
 ```
 
@@ -160,7 +174,8 @@ Sets width to placeholder width, only when value is empty.
 Default Value: false
 
 Example (turn on placeholder when empty):
- ```
+
+```
 <input autoSizeInput [usePlaceholderWhenEmpty]="true">
 ```
 
@@ -173,14 +188,17 @@ the form control or model. This option is not globally configurable and must be 
 Default Value: false
 
 Example (ngbTypeahead with inputFormatter):
-`search$` returns an array of objects `{ firstName: string; lastName: string; }[]` and `formatInput` transforms the selected object to ``` `${firstName} ${lastName}` ```. The value applied to the form control will be the object
+`search$` returns an array of objects `{ firstName: string; lastName: string; }[]` and `formatInput` transforms the selected object to `` `${firstName} ${lastName}` ``. The value applied to the form control will be the object
 selected so in-order to get the actual string value in the input we need to look at the value property.
- ```
+
+```
 <input autoSizeInput [useValueProperty]="true" formControlName="fullName" [ngbTypeahead]="search$" [inputFormatter]="formatInput">
 ```
 
 ## Author
+
 Joshua Wright
 
 ## License
+
 This project is licensed under the MIT license. See the [License](LICENSE) file for more info.
