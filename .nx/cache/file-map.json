@@ -61,48 +61,24 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "jest.config.ts",
-        "hash": "12333515226966617182"
-      },
-      {
-        "file": "CHANGELOG.md",
-        "hash": "2835469327297443434"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "8551326917262901536"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "4899571859969283834"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "16267754514737964994"
-      },
-      {
-        "file": "jest.preset.js",
-        "hash": "9084884494335109525"
-      },
-      {
-        "file": "apps/.gitkeep",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".eslintignore",
-        "hash": "7663861978715868291"
-      },
-      {
-        "file": "tools/tsconfig.tools.json",
-        "hash": "16088922570277978783"
+        "file": "nx.json",
+        "hash": "11563748075576607578"
       },
       {
         "file": "package.json",
         "hash": "6218237715846854612"
       },
       {
+        "file": "tsconfig.base.json",
+        "hash": "4899571859969283834"
+      },
+      {
         "file": ".nvmrc",
         "hash": "5185248025180765966"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
       },
       {
         "file": ".eslintrc.json",
@@ -113,24 +89,16 @@
         "hash": "11825725384246343288"
       },
       {
-        "file": "nx.json",
-        "hash": "11563748075576607578"
+        "file": "jest.config.ts",
+        "hash": "12333515226966617182"
       },
       {
-        "file": "libs/.gitkeep",
-        "hash": "3244421341483603138"
+        "file": "jest.preset.js",
+        "hash": "9084884494335109525"
       },
       {
-        "file": ".editorconfig",
-        "hash": "5443105041930014821"
-      },
-      {
-        "file": ".prettierignore",
-        "hash": "13265255507429161414"
-      },
-      {
-        "file": "package-lock.json",
-        "hash": "5418987468752891902"
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
       },
       {
         "file": ".github/workflows/ci.yml",
@@ -139,6 +107,38 @@
       {
         "file": ".vscode/extensions.json",
         "hash": "235626400633494639"
+      },
+      {
+        "file": "tools/tsconfig.tools.json",
+        "hash": "16088922570277978783"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": "apps/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "13265255507429161414"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "8551326917262901536"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "5418987468752891902"
+      },
+      {
+        "file": "CHANGELOG.md",
+        "hash": "2835469327297443434"
+      },
+      {
+        "file": "libs/.gitkeep",
+        "hash": "3244421341483603138"
       }
     ],
     "projectFileMap": {
@@ -185,7 +185,7 @@
         },
         {
           "file": "libs/ngx-autosize-input/src/lib/auto-size-input.directive.ts",
-          "hash": "10698056312529059687",
+          "hash": "4929279674330030107",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/forms",

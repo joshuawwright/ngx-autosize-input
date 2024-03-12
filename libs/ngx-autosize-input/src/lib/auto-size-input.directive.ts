@@ -9,16 +9,16 @@ import {
   Optional,
   Renderer2,
 } from '@angular/core';
-import { NgControl, NgModel } from '@angular/forms';
-import { Subject } from 'rxjs';
-import { takeUntil, tap } from 'rxjs/operators';
+import {NgControl, NgModel} from '@angular/forms';
+import {Subject} from 'rxjs';
+import {takeUntil, tap} from 'rxjs/operators';
 import {
   AUTO_SIZE_INPUT_OPTIONS,
   AutoSizeInputOptions,
   DEFAULT_AUTO_SIZE_INPUT_OPTIONS,
 } from './auto-size-input.options';
-import { Border } from './border';
-import { Padding } from './padding';
+import {Border} from './border';
+import {Padding} from './padding';
 
 @Directive({
   selector: '[autoSizeInput]',
@@ -170,7 +170,6 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
     if (this.setParentWidth) {
       this.renderer.setStyle(parent, 'width', width + 'px');
     } else {
-      console.log(width);
       this.renderer.setStyle(this.nativeElement, 'width', width + 'px');
     }
   }

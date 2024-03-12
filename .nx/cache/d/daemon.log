@@ -2391,3 +2391,11 @@ Source project does not exist: npm:jest-canvas-mock
 [NX Daemon Server] - 2024-03-12T19:14:40.000Z - Done responding to the client recordOutputsHash
 [NX Daemon Server] - 2024-03-12T19:14:40.000Z - Handled RECORD_OUTPUTS_HASH. Handling time: 0. Response time: 0.
 [NX Daemon Server] - 2024-03-12T19:14:40.012Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-03-12T19:16:00.046Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-03-12T19:16:00.047Z - [WATCHER]: libs/ngx-autosize-input/src/lib/auto-size-input.directive.ts was modified
+[NX Daemon Server] - 2024-03-12T19:16:00.124Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-03-12T19:16:00.147Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-03-12T19:16:00.147Z - [REQUEST]: libs/ngx-autosize-input/src/lib/auto-size-input.directive.ts
+[NX Daemon Server] - 2024-03-12T19:16:00.147Z - [REQUEST]: 
+[NX Daemon Server] - 2024-03-12T19:16:00.166Z - Time taken for 'hash changed files from watcher' 0.11648400034755468ms
+[NX Daemon Server] - 2024-03-12T19:16:01.235Z - [WATCHER]: Processing file changes in outputs
