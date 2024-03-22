@@ -8,7 +8,7 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 })
 export class AppComponent {
   name = '';
-  letterSpacing = '';
+  letterSpacing = '123123123123';
   withPlaceholder = '';
   placeHolderWhenEmpty = '';
   form = new UntypedFormGroup({

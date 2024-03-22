@@ -175,7 +175,8 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
   }
 
   private getTextWidth(value: string): number {
-    const context = this.renderer.createElement('canvas').getContext('2d');
+    const element = this.renderer.createElement('canvas');
+    const context = element.getContext('2d');
 
     const {
       fontStyle,
@@ -190,7 +191,9 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
     context.font = `${fontStyle} ${fontVariant} ${fontWeight} ${fontSize} ${fontFamily}`;
     context.letterSpacing = letterSpacing;
 
-    return context.measureText(value).width;
+    const width = context.measureText(value).width;
+    element.remove();
+    return width;
   }
 
   private updateWidth(): void {
