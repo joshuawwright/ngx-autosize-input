@@ -37,7 +37,6 @@
 <input
   cdkInputAutosize
   placeholder="Should fit to whatever text is displayed"
-  [cdkInputAutosizeUsePlaceHolderOnlyWhenEmpty]="true"
   [(ngModel)]="placeHolderWhenEmpty"
   type="text"
 />
@@ -45,13 +44,14 @@
 <br/>
 <fieldset [formGroup]="form">
   <label>
-    Input below should fit to placeholder only when it's visible, otherwise fit
-    to text entered by user
+    Input minimum width should equal the placeholder width, otherwise fit
+    the text entered by user
   </label>
   <br/>
   <input
     cdkInputAutosize
     placeholder="This input is using a form control name"
+    [cdkInputAutosizeUsePlaceHolderOnlyWhenEmpty]="false"
     formControlName="inputWithControlName"
     type="text"
   />
