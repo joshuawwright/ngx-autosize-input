@@ -3,26 +3,26 @@
 </div>
 
 <label> Enter and remove text in the input box below: </label>
-<br />
-<input cdkInputAutosize [(ngModel)]="name" type="text" />
-<br />
-<br />
+<br/>
+<input autoSizeInput [(ngModel)]="name" type="text"/>
+<br/>
+<br/>
 
 <label> Enter in input box with custom letter spacing: </label>
-<br />
+<br/>
 <input
   class="input-with-letter-spacing"
-  cdkInputAutosize
+  autoSizeInput
   [(ngModel)]="letterSpacing"
   type="text"
 />
-<br />
-<br />
+<br/>
+<br/>
 
 <label> Enter and remove text in the input with a placeholder below </label>
-<br />
+<br/>
 <input
-  cdkInputAutosize
+  autoSizeInput
   placeholder="Input size should never be smaller then this string"
   [(ngModel)]="withPlaceholder"
   type="text"
@@ -35,7 +35,7 @@
 </label>
 <br/>
 <input
-  cdkInputAutosize
+  autoSizeInput
   placeholder="Should fit to whatever text is displayed"
   [(ngModel)]="placeHolderWhenEmpty"
   type="text"
@@ -49,9 +49,9 @@
   </label>
   <br/>
   <input
-    cdkInputAutosize
+    autoSizeInput
     placeholder="This input is using a form control name"
-    [cdkInputAutosizeUsePlaceHolderOnlyWhenEmpty]="false"
+    [usePlaceHolderWhenEmpty]="false"
     formControlName="inputWithControlName"
     type="text"
   />

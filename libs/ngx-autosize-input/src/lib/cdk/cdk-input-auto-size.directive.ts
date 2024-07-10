@@ -1,4 +1,4 @@
-import {Directive, DoCheck, ElementRef, Input} from '@angular/core';
+import {AfterViewInit, Directive, DoCheck, ElementRef, Input} from '@angular/core';
 
 @Directive({
   selector: 'input[cdkInputAutosize]',
@@ -10,10 +10,10 @@ import {Directive, DoCheck, ElementRef, Input} from '@angular/core';
   },
   standalone: true,
 })
-export class CdkInputAutosize implements DoCheck {
-  @Input('cdkInputAutosizeMinWidth') minWidth?: number;
-  @Input('cdkInputAutosizeMaxWidth') maxWidth?: number;
-  @Input('cdkInputAutosizeUsePlaceHolderOnlyWhenEmpty') usePlaceHolderOnlyWhenEmpty = true;
+export class CdkInputAutosizeDirective implements DoCheck, AfterViewInit {
+  @Input() cdkInputAutosizeMinWidth?: number;
+  @Input() cdkInputAutosizeMaxWidth?: number;
+  @Input() cdkInputAutosizeUsePlaceHolderOnlyWhenEmpty = true;
   protected _initialWidth = '0px'
 
   constructor(
@@ -34,7 +34,7 @@ export class CdkInputAutosize implements DoCheck {
   }
 
   protected _createInputWithValue(value: string) {
-    let clone = this._inputElement.cloneNode(false) as HTMLTextAreaElement;
+    const clone = this._inputElement.cloneNode(false) as HTMLTextAreaElement;
 
     clone.value = value;
     clone.style.position = 'absolute';
@@ -45,7 +45,7 @@ export class CdkInputAutosize implements DoCheck {
     clone.style.width = '0px';
     clone.style.maxWidth = '';
 
-    this._inputElement.parentNode!.appendChild(clone);
+    this._inputElement.parentNode?.appendChild(clone);
 
     return clone;
   }
@@ -59,26 +59,26 @@ export class CdkInputAutosize implements DoCheck {
     inputClone.remove();
     placeHolderClone.remove();
 
-    return widths
+    return widths;
   }
 
   protected _resizeToFitContent() {
-    let {inputWidth, placeholderWidth} = this._getWidths()
+    const {inputWidth, placeholderWidth} = this._getWidths()
 
     let width: number;
 
-    if (this.usePlaceHolderOnlyWhenEmpty) {
+    if (this.cdkInputAutosizeUsePlaceHolderOnlyWhenEmpty) {
       width = this._inputElement.value === '' ? placeholderWidth : inputWidth;
     } else {
       width = placeholderWidth >= inputWidth ? placeholderWidth : inputWidth;
     }
 
-    if (this.minWidth !== undefined) {
-      width = Math.max(width, this.minWidth);
+    if (this.cdkInputAutosizeMinWidth !== undefined) {
+      width = Math.max(width, this.cdkInputAutosizeMinWidth);
     }
 
-    if (this.maxWidth !== undefined) {
-      width = Math.min(width, this.maxWidth);
+    if (this.cdkInputAutosizeMaxWidth !== undefined) {
+      width = Math.min(width, this.cdkInputAutosizeMaxWidth);
     }
 
     this._elementRef.nativeElement.style.width = width + 'px'
