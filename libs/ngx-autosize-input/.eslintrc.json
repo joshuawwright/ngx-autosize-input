@@ -9,7 +9,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "autoSizeInput",
+            "prefix": ["autoSizeInput", "cdkInput"],
             "style": "camelCase"
           }
         ],

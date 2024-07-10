@@ -3,56 +3,55 @@
 </div>
 
 <label> Enter and remove text in the input box below: </label>
-<br />
-<input autoSizeInput [(ngModel)]="name" type="text" />
-<br />
-<br />
+<br/>
+<input autoSizeInput [(ngModel)]="name" type="text"/>
+<br/>
+<br/>
 
 <label> Enter in input box with custom letter spacing: </label>
-<br />
+<br/>
 <input
   class="input-with-letter-spacing"
   autoSizeInput
   [(ngModel)]="letterSpacing"
   type="text"
 />
-<br />
-<br />
+<br/>
+<br/>
 
 <label> Enter and remove text in the input with a placeholder below </label>
-<br />
+<br/>
 <input
   autoSizeInput
   placeholder="Input size should never be smaller then this string"
   [(ngModel)]="withPlaceholder"
   type="text"
 />
-<br />
-<br />
+<br/>
+<br/>
 <label>
   Input below should fit to placeholder only when it's visible, otherwise fit to
   text entered by user
 </label>
-<br />
+<br/>
 <input
   autoSizeInput
   placeholder="Should fit to whatever text is displayed"
-  [usePlaceHolderWhenEmpty]="true"
   [(ngModel)]="placeHolderWhenEmpty"
   type="text"
 />
-<br />
-<br />
+<br/>
+<br/>
 <fieldset [formGroup]="form">
   <label>
-    Input below should fit to placeholder only when it's visible, otherwise fit
-    to text entered by user
+    Input minimum width should equal the placeholder width, otherwise fit
+    the text entered by user
   </label>
-  <br />
+  <br/>
   <input
     autoSizeInput
     placeholder="This input is using a form control name"
-    [usePlaceHolderWhenEmpty]="true"
+    [usePlaceHolderWhenEmpty]="false"
     formControlName="inputWithControlName"
     type="text"
   />
