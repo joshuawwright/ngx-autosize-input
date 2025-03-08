@@ -20,7 +20,8 @@
             "prefix": "ngx-autosize-input",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@angular-eslint/prefer-standalone": "off"
       },
       "extends": [
         "plugin:@nx/angular",
