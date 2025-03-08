@@ -1,3 +1,6 @@
+## 19.2.1
+Updated to Angular 19.2.1
+
 ## 18.2.9
 Updated to Angular 18.2.9
 

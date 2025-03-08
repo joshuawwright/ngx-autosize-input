@@ -23,14 +23,14 @@ https://stackblitz.com/edit/angular-ivy-dtjmsk?file=src/app/hello.component.ts
 npm install ngx-autosize-input
 ```
 
-Add AutoSizeInputModule to your @NgModule imports:
+Add AutoSizeInputDirective to your @NgModule imports:
 
 ```typescript
-import {AutoSizeInputModule} from 'ngx-autosize-input';
+import {AutoSizeInputDirective} from "ngx-autosize-input";
 
 @NgModule({
   imports: [
-    AutoSizeInputModule
+    AutoSizeInputDirective
   ]
 })
 ```
@@ -38,7 +38,7 @@ import {AutoSizeInputModule} from 'ngx-autosize-input';
 The input options can be set from a provider (see below), or from the template (skip to the next section).
 
 ```typescript
-import {AUTO_SIZE_INPUT_OPTIONS, AutoSizeInputModule, AutoSizeInputOptions} from 'ngx-autosize-input';
+import {AUTO_SIZE_INPUT_OPTIONS, AutoSizeInputDirective, AutoSizeInputOptions} from 'ngx-autosize-input';
 
 const CUSTOM_AUTO_SIZE_INPUT_OPTIONS: AutoSizeInputOptions = {
   extraWidth: 0,
@@ -53,7 +53,7 @@ const CUSTOM_AUTO_SIZE_INPUT_OPTIONS: AutoSizeInputOptions = {
 
 @NgModule({
   imports: [
-    AutoSizeInputModule
+    AutoSizeInputDirective
   ],
   providers: [
     { provide: AUTO_SIZE_INPUT_OPTIONS, useValue: CUSTOM_AUTO_SIZE_INPUT_OPTIONS }

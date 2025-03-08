@@ -1,6 +1,6 @@
 {
   "name": "ngx-autosize-input",
-  "version": "18.2.9",
+  "version": "19.2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/joshuawwright/ngx-autosize-input"
@@ -20,9 +20,9 @@
     "url": "https://github.com/joshuawwright/ngx-autosize-input/issues"
   },
   "peerDependencies": {
-    "@angular/common": "^18.0.0",
-    "@angular/core": "^18.0.0",
-    "@angular/forms": "^18.0.0"
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "@angular/forms": "^19.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

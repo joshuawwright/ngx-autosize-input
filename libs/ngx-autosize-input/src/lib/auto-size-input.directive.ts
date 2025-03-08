@@ -21,7 +21,8 @@ import {Border} from './border';
 import {Padding} from './padding';
 
 @Directive({
-  selector: '[autoSizeInput]',
+    selector: '[autoSizeInput]',
+    standalone: true
 })
 export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
   @Input() extraWidth: number;

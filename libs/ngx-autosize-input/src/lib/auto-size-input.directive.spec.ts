@@ -13,13 +13,11 @@ import { By } from '@angular/platform-browser';
 describe(AutoSizeInputDirective.name, () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AutoSizeInputDirective,
+      declarations: [],
+      imports: [FormsModule, AutoSizeInputDirective, ReactiveFormsModule,
         ControlComponent,
         ModelComponent,
-        TestComponent,
-      ],
-      imports: [FormsModule, ReactiveFormsModule],
+        TestComponent,],
       providers: [Renderer2],
     }).compileComponents();
   });
@@ -195,6 +193,11 @@ describe(AutoSizeInputDirective.name, () => {
 });
 
 @Component({
+  standalone: true,
+  imports: [
+    AutoSizeInputDirective,
+    ReactiveFormsModule
+  ],
   template: ` <div>
       <input
         autoSizeInput
@@ -234,6 +237,11 @@ class ControlComponent {
 }
 
 @Component({
+  standalone: true,
+  imports: [
+    AutoSizeInputDirective,
+    FormsModule
+  ],
   template: `<input autoSizeInput [(ngModel)]="model" />`,
 })
 class ModelComponent {
@@ -241,6 +249,10 @@ class ModelComponent {
 }
 
 @Component({
+  standalone: true,
+  imports: [
+    AutoSizeInputDirective
+  ],
   template: `<input autoSizeInput [useValueProperty]="true" />`,
 })
 class TestComponent {}
