@@ -21,8 +21,8 @@ import {Border} from './border';
 import {Padding} from './padding';
 
 @Directive({
-    selector: '[autoSizeInput]',
-    standalone: true
+  selector: '[autoSizeInput]',
+  standalone: true
 })
 export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
   @Input() extraWidth: number;
@@ -37,10 +37,15 @@ export class AutoSizeInputDirective implements AfterViewInit, OnDestroy {
   private destroyed$ = new Subject<void>();
 
   constructor(
+    // eslint-disable-next-line @angular-eslint/prefer-inject
     private element: ElementRef,
+    // eslint-disable-next-line @angular-eslint/prefer-inject
     private renderer: Renderer2,
+    // eslint-disable-next-line @angular-eslint/prefer-inject
     @Optional() private ngModel?: NgModel,
+    // eslint-disable-next-line @angular-eslint/prefer-inject
     @Optional() private ngControl?: NgControl,
+    // eslint-disable-next-line @angular-eslint/prefer-inject
     @Optional()
     @Inject(AUTO_SIZE_INPUT_OPTIONS)
     readonly options?: AutoSizeInputOptions

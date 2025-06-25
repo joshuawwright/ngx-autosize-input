@@ -17,6 +17,7 @@ export class CdkInputAutosizeDirective implements DoCheck, AfterViewInit {
   protected _initialWidth = '0px'
 
   constructor(
+    // eslint-disable-next-line @angular-eslint/prefer-inject
     private _elementRef: ElementRef<HTMLInputElement>
   ) {
   }
