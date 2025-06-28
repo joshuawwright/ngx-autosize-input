@@ -1,33 +1,37 @@
-import {AfterViewInit, Directive, DoCheck, ElementRef, Input} from '@angular/core';
+import {
+  AfterViewInit,
+  Directive,
+  DoCheck,
+  ElementRef,
+  Input,
+} from '@angular/core';
 
 @Directive({
   selector: 'input[cdkInputAutosize]',
   exportAs: 'cdkInputAutosize',
   host: {
-    'class': 'cdk-input-autosize',
+    class: 'cdk-input-autosize',
     '[style.width]': '_initialWidth',
     '(input)': '_resizeToFitContent()',
   },
-  standalone: true,
 })
 export class CdkInputAutosizeDirective implements DoCheck, AfterViewInit {
   @Input() cdkInputAutosizeMinWidth?: number;
   @Input() cdkInputAutosizeMaxWidth?: number;
   @Input() cdkInputAutosizeUsePlaceHolderOnlyWhenEmpty = true;
-  protected _initialWidth = '0px'
+  protected _initialWidth = '0px';
 
   constructor(
     // eslint-disable-next-line @angular-eslint/prefer-inject
     private _elementRef: ElementRef<HTMLInputElement>
-  ) {
-  }
+  ) {}
 
   private get _inputElement() {
     return this._elementRef.nativeElement as HTMLInputElement;
   }
 
   ngAfterViewInit() {
-    this._resizeToFitContent()
+    this._resizeToFitContent();
   }
 
   ngDoCheck() {
@@ -53,9 +57,14 @@ export class CdkInputAutosizeDirective implements DoCheck, AfterViewInit {
 
   protected _getWidths() {
     const inputClone = this._createInputWithValue(this._inputElement.value);
-    const placeHolderClone = this._createInputWithValue(this._inputElement.placeholder);
+    const placeHolderClone = this._createInputWithValue(
+      this._inputElement.placeholder
+    );
 
-    const widths = {inputWidth: inputClone.scrollWidth, placeholderWidth: placeHolderClone.scrollWidth}
+    const widths = {
+      inputWidth: inputClone.scrollWidth,
+      placeholderWidth: placeHolderClone.scrollWidth,
+    };
 
     inputClone.remove();
     placeHolderClone.remove();
@@ -64,7 +73,7 @@ export class CdkInputAutosizeDirective implements DoCheck, AfterViewInit {
   }
 
   protected _resizeToFitContent() {
-    const {inputWidth, placeholderWidth} = this._getWidths()
+    const { inputWidth, placeholderWidth } = this._getWidths();
 
     let width: number;
 
@@ -82,6 +91,6 @@ export class CdkInputAutosizeDirective implements DoCheck, AfterViewInit {
       width = Math.min(width, this.cdkInputAutosizeMaxWidth);
     }
 
-    this._elementRef.nativeElement.style.width = width + 'px'
+    this._elementRef.nativeElement.style.width = width + 'px';
   }
 }

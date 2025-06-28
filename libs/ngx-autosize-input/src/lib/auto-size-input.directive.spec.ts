@@ -14,10 +14,14 @@ describe(AutoSizeInputDirective.name, () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [],
-      imports: [FormsModule, AutoSizeInputDirective, ReactiveFormsModule,
+      imports: [
+        FormsModule,
+        AutoSizeInputDirective,
+        ReactiveFormsModule,
         ControlComponent,
         ModelComponent,
-        TestComponent,],
+        TestComponent,
+      ],
       providers: [Renderer2],
     }).compileComponents();
   });
@@ -194,10 +198,7 @@ describe(AutoSizeInputDirective.name, () => {
 
 @Component({
   standalone: true,
-  imports: [
-    AutoSizeInputDirective,
-    ReactiveFormsModule
-  ],
+  imports: [AutoSizeInputDirective, ReactiveFormsModule],
   template: ` <div>
       <input
         autoSizeInput
@@ -238,10 +239,7 @@ class ControlComponent {
 
 @Component({
   standalone: true,
-  imports: [
-    AutoSizeInputDirective,
-    FormsModule
-  ],
+  imports: [AutoSizeInputDirective, FormsModule],
   template: `<input autoSizeInput [(ngModel)]="model" />`,
 })
 class ModelComponent {
@@ -250,9 +248,7 @@ class ModelComponent {
 
 @Component({
   standalone: true,
-  imports: [
-    AutoSizeInputDirective
-  ],
+  imports: [AutoSizeInputDirective],
   template: `<input autoSizeInput [useValueProperty]="true" />`,
 })
 class TestComponent {}
